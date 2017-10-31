@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d5ac5-858d-48fa-b062-82d540bbf8ca" name="Default" comment="" />
+    <list default="true" id="d99d5ac5-858d-48fa-b062-82d540bbf8ca" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/david_vanilla_rnn.py" afterPath="$PROJECT_DIR$/RNN/david_vanilla_rnn.py" />
+    </list>
     <ignored path="NeuralNetworks.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="190" column="15" selection-start-line="190" selection-start-column="15" selection-end-line="190" selection-end-column="15" />
+              <caret line="190" column="16" selection-start-line="190" selection-start-column="16" selection-end-line="190" selection-end-column="16" />
               <folding>
                 <element signature="e#26#44#0" expanded="true" />
                 <element signature="e#541#545#0" expanded="false" />
@@ -66,10 +70,10 @@
                 <element signature="e#1926#2206#0" expanded="false" />
                 <element signature="e#2288#2595#0" expanded="false" />
                 <element signature="e#2636#3079#0" expanded="false" />
-                <element signature="e#6544#6734#0" expanded="false" />
-                <element signature="e#6783#6820#0" expanded="false" />
-                <element signature="e#6884#7133#0" expanded="false" />
-                <element signature="e#7187#7453#0" expanded="false" />
+                <element signature="e#6545#6735#0" expanded="false" />
+                <element signature="e#6784#6821#0" expanded="false" />
+                <element signature="e#6885#7134#0" expanded="false" />
+                <element signature="e#7188#7454#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -108,6 +112,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -511,10 +516,10 @@
             <element signature="e#1926#2206#0" expanded="false" />
             <element signature="e#2288#2595#0" expanded="false" />
             <element signature="e#2636#3079#0" expanded="false" />
-            <element signature="e#6544#6734#0" expanded="false" />
-            <element signature="e#6783#6820#0" expanded="false" />
-            <element signature="e#6884#7133#0" expanded="false" />
-            <element signature="e#7187#7453#0" expanded="false" />
+            <element signature="e#6545#6735#0" expanded="false" />
+            <element signature="e#6784#6821#0" expanded="false" />
+            <element signature="e#6885#7134#0" expanded="false" />
+            <element signature="e#7188#7454#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -579,10 +584,10 @@
             <element signature="e#1926#2206#0" expanded="false" />
             <element signature="e#2288#2595#0" expanded="false" />
             <element signature="e#2636#3079#0" expanded="false" />
-            <element signature="e#6544#6734#0" expanded="false" />
-            <element signature="e#6783#6820#0" expanded="false" />
-            <element signature="e#6884#7133#0" expanded="false" />
-            <element signature="e#7187#7453#0" expanded="false" />
+            <element signature="e#6545#6735#0" expanded="false" />
+            <element signature="e#6784#6821#0" expanded="false" />
+            <element signature="e#6885#7134#0" expanded="false" />
+            <element signature="e#7188#7454#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -639,10 +644,10 @@
             <element signature="e#1926#2206#0" expanded="false" />
             <element signature="e#2288#2595#0" expanded="false" />
             <element signature="e#2636#3079#0" expanded="false" />
-            <element signature="e#6544#6734#0" expanded="false" />
-            <element signature="e#6783#6820#0" expanded="false" />
-            <element signature="e#6884#7133#0" expanded="false" />
-            <element signature="e#7187#7453#0" expanded="false" />
+            <element signature="e#6545#6735#0" expanded="false" />
+            <element signature="e#6784#6821#0" expanded="false" />
+            <element signature="e#6885#7134#0" expanded="false" />
+            <element signature="e#7188#7454#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -746,7 +751,7 @@
     <entry file="file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="190" column="15" selection-start-line="190" selection-start-column="15" selection-end-line="190" selection-end-column="15" />
+          <caret line="190" column="16" selection-start-line="190" selection-start-column="16" selection-end-line="190" selection-end-column="16" />
           <folding>
             <element signature="e#26#44#0" expanded="true" />
             <element signature="e#541#545#0" expanded="false" />
@@ -758,10 +763,10 @@
             <element signature="e#1926#2206#0" expanded="false" />
             <element signature="e#2288#2595#0" expanded="false" />
             <element signature="e#2636#3079#0" expanded="false" />
-            <element signature="e#6544#6734#0" expanded="false" />
-            <element signature="e#6783#6820#0" expanded="false" />
-            <element signature="e#6884#7133#0" expanded="false" />
-            <element signature="e#7187#7453#0" expanded="false" />
+            <element signature="e#6545#6735#0" expanded="false" />
+            <element signature="e#6784#6821#0" expanded="false" />
+            <element signature="e#6885#7134#0" expanded="false" />
+            <element signature="e#7188#7454#0" expanded="false" />
           </folding>
         </state>
       </provider>

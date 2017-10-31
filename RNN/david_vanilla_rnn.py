@@ -188,7 +188,7 @@ class RNNCell():
 
         y_hat = softmax(o_t)
 
-        return (y_hat, hidden_t_1 ,self.h)
+        return d(y_hat, hidden_t_1 ,self.h)
 
     def backprop_tt(self,X,Y,t,hidden_t_1):
 
