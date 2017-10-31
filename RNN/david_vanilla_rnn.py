@@ -160,17 +160,43 @@ class RNNCell():
 
         self.h = np.zeros((h_dim,1))
 
+        self.h_prev = np.zeros((h_dim,1))
+
+        self.h_next = np.zeros((h_dim,1))
+
         self.window = window
 
         self.words = words
 
-    def forward_pass(self,X,hidden_t_1):
+    def forward_prop(self,X):
+        '''
+        Takes in a series of X inputs
+        and returns a list of the information
+        stored for eacch time step. In this case
+        it is just the hidden units at that time step
+        :param X:
+        :return:
+        '''
+
+        layers = []
+
+        for i in range(len(X)):
+
+            curr_h = self.h.copy()
+
+            prev_h = self.h_prev.copy()
+
+            layers.append([curr_h,prev_h])
+
+        return layers
+
+    def forward_pass(self,X):
 
         # a(t) = b + Wh(t−1)+ Ux(t)j - activation layer
 
         X = np.reshape(X,(len(X),1))
 
-        a1 = np.dot(self.Wh,hidden_t_1)
+        a1 = np.dot(self.Wh,self.h_prev)
 
         a2 = np.dot(self.Ux,X)
 
@@ -188,9 +214,9 @@ class RNNCell():
 
         y_hat = softmax(o_t)
 
-        return d(y_hat, hidden_t_1 ,self.h)
+        return y_hat
 
-    def backprop_tt(self,X,Y,t,hidden_t_1):
+    def backprop_tt(self,X,Y,t):
 
         '''
         In order to update our weights we need the derivative
@@ -224,7 +250,7 @@ class RNNCell():
         input = np.reshape(X[t],(len(X[t]),1))
         # dL/do - derivative of Loss w.r.t output
 
-        y_hat_final,h_t_1,h_t = self.forward_pass(X[t],hidden_t_1) # output from the final layer
+        y_hat_final= self.forward_prop(input) # output from the final layer
 
         y_actual = np.reshape(Y[t],(y_hat_final.shape))
 
@@ -236,15 +262,15 @@ class RNNCell():
 
         dl_dh_t = np.dot(self.Vy.T,dL_do)
 
-        dL_dV = np.dot(dL_do,h_t.T)
+        dL_dV = np.dot(dL_do,self.h.T)
 
         #dL_dW = np.dot(np.dot(np.add(-1,h_t**2).T,dl_dh_t),h_t_1.T)
 
-        dL_dW = self.delta_LW(h_t,dl_dh_t,h_t_1)
+        dL_dW = self.delta_LW(self.h,dl_dh_t,self.h_prev)
 
         #dL_dU = np.dot(np.dot(np.add(-1,h_t**2).T,dl_dh_t),input)
 
-        dL_dU = self.delta_LW(h_t,dl_dh_t,input)
+        dL_dU = self.delta_LW(self.h,dl_dh_t,input)
 
         dV += dL_dV
 
@@ -254,14 +280,14 @@ class RNNCell():
 
         prev_dh = dl_dh_t
 
-        h_tp1 = h_t
+        self.h_next = self.h
 
         for i in range(t - 1, max(-1,t - self.window), -1):
 
             input = np.reshape(X[i], (len(X[i]),1))
             # dL/do - derivative of Loss w.r.t output
 
-            y_hat_t, h_t_1, h_t = self.forward_pass(X[i],h_t_1)  # output from the final layer
+            y_hat_t= self.forward_pass(X[i])  # output from the final layer
 
             dL_do = y_hat_t - 1
 
@@ -269,14 +295,14 @@ class RNNCell():
 
             b= np.dot(self.Wh,prev_dh)
 
-            c = np.diag(np.add(-1,h_tp1 ** 2))
+            c = np.diag(np.add(-1,self.h_next ** 2))
 
             d = np.reshape(np.dot(b,c),(a.shape[0],1))
 
             dl_dh_t = np.add(a, d)
 
             #dL_dW = np.dot(np.dot(np.add(-1, h_t ** 2).T, dl_dh_t), h_t_1.T)
-            dL_dW = self.delta_LW(h_t,dl_dh_t,h_t_1)
+            dL_dW = self.delta_LW(self.h,dl_dh_t,self.h_prev)
 
             #dL_dU = np.dot(np.dot(np.add(-1, h_t ** 2).T, dl_dh_t), input)
             dL_dU = self.delta_LW(h_t,dl_dh_t,input)
@@ -353,7 +379,7 @@ def main():
 
     # Parameters
     learning_rate = 0.001
-    training_iters = 150000
+    training_iters = 1500
     display_step = 1000
     window = 1
 
@@ -401,13 +427,9 @@ def main():
 
         for iter in range(len(X)):
 
-            h_prev = RNN.h
+            RNN.h_prev = RNN.h
 
-            # utils.save_matrix_img(Wh,'/Users/befeltingu/ML_research/rnn_figures/test.png')
-
-            # (h_hat,h_prev,h_new) = RNN.forward_pass(X[iter],h_prev)
-
-            # error = RNN.negative_log_loss(h_hat,Y[iter])
+            RNN.forward_pass(X[iter])
 
             dV, dW, dU = RNN.backprop_tt(X, Y, iter, h_prev)
 
