@@ -72,7 +72,7 @@ if run_raval_lstm:
 ######################################
 #       Tensorflow LSTM
 ######################################
-run_tensorflow_lstm = 0
+run_tensorflow_lstm = 1
 if run_tensorflow_lstm:
 
     import tensorflow_lstm
@@ -101,7 +101,7 @@ if run_tensorflow_lstm:
 ######################################
 #       David RNN
 ######################################
-run_david_rnn = 1
+run_david_rnn = 0
 if run_david_rnn:
 
     import david_vanilla_rnn

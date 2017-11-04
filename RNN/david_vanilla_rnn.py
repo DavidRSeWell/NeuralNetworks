@@ -103,9 +103,9 @@ class NetworkRNN():
 
         for word in self.X:
 
-            y_hat, hidden_t_1, self.h = RNN.forward_pass(word,RNN.h)
+            o_t = RNN.forward_pass(word)
 
-            #y_hat = softmax(o_t)
+            y_hat = softmax(o_t)
 
             t_p_matrix.append(y_hat)
 
@@ -182,7 +182,7 @@ class RNNCell():
         :return:
         '''
 
-        prev_h = np.zeros(self.h.shape) # for first time step the hidden layer is zero
+        self.h_prev = np.zeros(self.h.shape) # for first time step the hidden layer is zero
 
         layers = []
 
@@ -263,7 +263,7 @@ class RNNCell():
 
         y_actual = np.reshape(Y[t],(len(X[0]),1))
 
-        o_t_final = utils.softmax(layers[0][2]) # get output from the final layer
+        o_t_final = layers[0][2] # get output from the final layer
 
         y_hat_final = utils.softmax(o_t_final)
 
@@ -396,14 +396,22 @@ def main():
 
     vocab_size = len(dictionary)
 
+    '''onehot_words = np.array([
+        [1,0,0,0,0],
+        [0,1,0,0,0],
+        [0,0,1,0,0],
+        [0,0,0,1,0],
+        [0,0,0,0,1]
+    ])'''
+
     # Parameters
     learning_rate = 0.001
-    training_iters = 1500
+    training_iters = 50000
     display_step = 1000
     window = 1
 
     # number of units in RNN cell
-    h_dimension = 6
+    h_dimension = 100
 
     Y = onehot_words[1:]
 
@@ -413,9 +421,15 @@ def main():
 
     Wh = np.random.random((h_dimension, h_dimension))
 
-    Ux = np.random.random((h_dimension, X.shape[0]))
+    Wh = np.round(Wh,2)
 
-    Vy = np.random.random((X.shape[0], h_dimension))
+    Ux = np.random.random((h_dimension, X.shape[1]))
+
+    Ux = np.round(Ux,2)
+
+    Vy = np.random.random((X.shape[1], h_dimension))
+
+    Vy = np.round(Vy,2)
 
     RNNnetwork = NetworkRNN(X, Y)
 
@@ -430,6 +444,10 @@ def main():
         # the initial hidden layer is all zero
 
         RNN.h = np.zeros((h_dimension, 1))
+
+        RNN.h_prev = np.zeros((h_dimension, 1))
+
+        RNN.h_next = np.zeros((h_dimension, 1))
 
         if (d % display_step) == 0:
             # calculate total loss every 5 epochs
@@ -446,11 +464,9 @@ def main():
 
         for iter in range(len(X)):
 
-            RNN.h_prev = RNN.h
+            RNN.h_prev = RNN.h.copy()
 
             X_train = X[iter:window + iter]
-
-
 
             dV, dW, dU = RNN.backprop_tt(X_train, Y, iter)
 

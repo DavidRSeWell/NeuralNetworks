@@ -5,6 +5,7 @@
 
 import numpy as np
 import collections
+import operator
 
 def softmax(X):
 
@@ -17,11 +18,11 @@ def softmax(X):
 
     X = np.array(X)
 
-    row_sum = np.array([np.sum(np.exp(r)) for r in X])
+    #row_sum = np.array([np.sum(np.exp(r)) for r in X])
 
-    row_sum = np.reshape(row_sum,(len(row_sum),1))
+    #row_sum = np.reshape(row_sum,(len(row_sum),1))
 
-    return np.exp(X) / row_sum
+    return np.exp(X) / np.sum(np.exp(X))
 
 def plot_matrix(X,x_labels,y_labels,savepath):
 
@@ -101,13 +102,18 @@ def build_dataset(words):
     :return:
     '''
 
-    count = collections.Counter(words).most_common()
+    '''count = collections.Counter(words).most_common()
 
     dictionary = dict()
 
     for word, _ in count:
 
-        dictionary[word] = len(dictionary)
+        dictionary[word] = len(dictionary)'''
+
+    dictionary = dict()
+
+    for i in range(len(words)):
+        dictionary[words[i]] = i
 
     reverse_dictionary = dict(zip(dictionary.values(), dictionary.keys()))
 

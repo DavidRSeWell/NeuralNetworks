@@ -70,12 +70,12 @@ def main():
 
     # Parameters
     learning_rate = 0.001
-    training_iters = 50000
+    training_iters = 15000
     display_step = 1000
     n_input = 1
 
     # number of units in RNN cell
-    n_hidden = 512
+    n_hidden = 100
 
     # tf Graph input
     x = tf.placeholder("float", [None, n_input, 1])
