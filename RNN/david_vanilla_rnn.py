@@ -85,7 +85,9 @@ class NetworkRNN():
 
         for i in range(len(Y)):
 
-            y_hat, hidden_t_1, self.h = RNN.forward_pass(X[i],RNN.h)
+            o_t = RNN.forward_pass(X[i])
+
+            y_hat = utils.softmax(o_t)
 
             loss = self.loss(Y[i],y_hat,type)
 
@@ -135,7 +137,9 @@ class NetworkRNN():
 
         for i in range(len(self.X)):
 
-            y_hat, hidden_t_1, self.h = RNN.forward_pass(self.X[i], RNN.h)
+            o_t = RNN.forward_pass(self.X[i])
+
+            y_hat = utils.softmax(o_t)
 
             pred_index = np.argmax(y_hat)
 
@@ -178,15 +182,20 @@ class RNNCell():
         :return:
         '''
 
+        prev_h = np.zeros(self.h.shape) # for first time step the hidden layer is zero
+
         layers = []
 
+        # loop over each of the inputs performing a forward pass on each
+        # and tracking the hidden layer,output for each which will be used in the
+        # back prop step
         for i in range(len(X)):
+
+            o_t = self.forward_pass(X[i])
 
             curr_h = self.h.copy()
 
-            prev_h = self.h_prev.copy()
-
-            layers.append([curr_h,prev_h])
+            layers.append([X[i],curr_h,o_t])
 
         return layers
 
@@ -214,7 +223,7 @@ class RNNCell():
 
         y_hat = softmax(o_t)
 
-        return y_hat
+        return o_t
 
     def backprop_tt(self,X,Y,t):
 
@@ -247,12 +256,18 @@ class RNNCell():
 
         dU = np.zeros(self.Ux.shape)
 
-        input = np.reshape(X[t],(len(X[t]),1))
+        #input = np.reshape(X[t],(len(X[t]),1))
         # dL/do - derivative of Loss w.r.t output
 
-        y_hat_final= self.forward_prop(input) # output from the final layer
+        layers = self.forward_prop(X) # output from the final layer
 
-        y_actual = np.reshape(Y[t],(y_hat_final.shape))
+        y_actual = np.reshape(Y[t],(len(X[0]),1))
+
+        o_t_final = utils.softmax(layers[0][2]) # get output from the final layer
+
+        y_hat_final = utils.softmax(o_t_final)
+
+        input = np.reshape(layers[0][0],(len(X[0]),1))
 
         dL_do = np.add(-y_actual,y_hat_final)
 
@@ -280,14 +295,16 @@ class RNNCell():
 
         prev_dh = dl_dh_t
 
-        self.h_next = self.h
+        self.h_next = self.h.copy()
 
-        for i in range(t - 1, max(-1,t - self.window), -1):
+        for i in range(self.window -2 , -1,-1): # back prop throught the remaining layers
 
-            input = np.reshape(X[i], (len(X[i]),1))
+            input = layers[i][0]
             # dL/do - derivative of Loss w.r.t output
 
-            y_hat_t= self.forward_pass(X[i])  # output from the final layer
+            o_t = self.forward_pass(input)  # output from the final layer
+
+            y_hat_t = utils.softmax(o_t)
 
             dL_do = y_hat_t - 1
 
@@ -369,6 +386,8 @@ class RNNCell():
 
 def main():
 
+    np.random.seed(7)
+
     training_file = '/Users/befeltingu/NeuralNetworks/RNN/data/toy_language'
 
     training_data = utils.read_data(training_file)
@@ -384,19 +403,19 @@ def main():
     window = 1
 
     # number of units in RNN cell
-    h_dimension = 512
+    h_dimension = 6
 
     Y = onehot_words[1:]
 
-    X = onehot_words[:-1]
+    X = onehot_words[:-window]
 
     #h_dimension = 20
 
     Wh = np.random.random((h_dimension, h_dimension))
 
-    Ux = np.random.random((h_dimension, X.shape[1]))
+    Ux = np.random.random((h_dimension, X.shape[0]))
 
-    Vy = np.random.random((X.shape[1], h_dimension))
+    Vy = np.random.random((X.shape[0], h_dimension))
 
     RNNnetwork = NetworkRNN(X, Y)
 
@@ -429,9 +448,11 @@ def main():
 
             RNN.h_prev = RNN.h
 
-            RNN.forward_pass(X[iter])
+            X_train = X[iter:window + iter]
 
-            dV, dW, dU = RNN.backprop_tt(X, Y, iter, h_prev)
+
+
+            dV, dW, dU = RNN.backprop_tt(X_train, Y, iter)
 
             RNN.Vy -= learning_rate * dV
 

@@ -14,6 +14,9 @@ def softmax(X):
     :param X:
     :return:
     '''
+
+    X = np.array(X)
+
     row_sum = np.array([np.sum(np.exp(r)) for r in X])
 
     row_sum = np.reshape(row_sum,(len(row_sum),1))

@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d5ac5-858d-48fa-b062-82d540bbf8ca" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/data/toy_language" afterPath="$PROJECT_DIR$/RNN/data/toy_language" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RNN/david_vanilla_rnn.py" afterPath="$PROJECT_DIR$/RNN/david_vanilla_rnn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
     </list>
     <ignored path="NeuralNetworks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +28,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RNN/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+            <state relative-caret-position="188">
+              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
               <folding>
                 <element signature="e#531#1668#0" expanded="false" />
                 <element signature="e#1825#2571#0" expanded="false" />
@@ -38,27 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-              <folding>
-                <element signature="e#136#154#0" expanded="true" />
-                <element signature="e#480#997#0" expanded="false" />
-                <element signature="e#1052#1431#0" expanded="false" />
-                <element signature="e#1460#1714#0" expanded="false" />
-                <element signature="e#1747#2337#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="david_vanilla_rnn.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="190" column="16" selection-start-line="190" selection-start-column="16" selection-end-line="190" selection-end-column="16" />
+            <state relative-caret-position="383">
+              <caret line="413" column="53" selection-start-line="413" selection-start-column="53" selection-end-line="413" selection-end-column="53" />
               <folding>
                 <element signature="e#26#44#0" expanded="true" />
                 <element signature="e#541#545#0" expanded="false" />
@@ -66,27 +51,10 @@
                 <element signature="e#695#945#0" expanded="false" />
                 <element signature="e#994#1186#0" expanded="false" />
                 <element signature="e#1230#1547#0" expanded="false" />
-                <element signature="e#1599#1875#0" expanded="false" />
-                <element signature="e#1926#2206#0" expanded="false" />
-                <element signature="e#2288#2595#0" expanded="false" />
-                <element signature="e#2636#3079#0" expanded="false" />
-                <element signature="e#6545#6735#0" expanded="false" />
-                <element signature="e#6784#6821#0" expanded="false" />
-                <element signature="e#6885#7134#0" expanded="false" />
-                <element signature="e#7188#7454#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tensorflow_lstm.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RNN/tensorflow_lstm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1500">
-              <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#148#299#0" expanded="false" />
+                <element signature="e#2300#2607#0" expanded="false" />
+                <element signature="e#7586#7776#0" expanded="false" />
+                <element signature="e#7825#7862#0" expanded="false" />
+                <element signature="e#7926#8175#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -96,7 +64,32 @@
         <entry file="file://$PROJECT_DIR$/RNN/data/toy_language">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="33" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+              <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="e#502#1019#0" expanded="false" />
+                <element signature="e#1074#1453#0" expanded="false" />
+                <element signature="e#1482#1736#0" expanded="false" />
+                <element signature="e#1769#2359#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="raval_lstm.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RNN/raval_lstm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1305">
+              <caret line="87" column="43" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -118,12 +111,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/RNN/data/toy_language" />
         <option value="$PROJECT_DIR$/RNN/raval_lstm.py" />
         <option value="$PROJECT_DIR$/RNN/data/thrush.txt" />
         <option value="$PROJECT_DIR$/RNN/tensorflow_lstm.py" />
-        <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/RNN/main.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/RNN/data/toy_language" />
         <option value="$PROJECT_DIR$/RNN/david_vanilla_rnn.py" />
       </list>
     </option>
@@ -157,6 +150,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -189,10 +183,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NeuralNetworks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NeuralNetworks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RNN" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -376,29 +387,37 @@
       <option name="presentableId" value="Default" />
       <updated>1509221332258</updated>
     </task>
+    <task id="LOCAL-00001" summary="starting fixing the backprop in david_vanilla_rnn">
+      <created>1509460038087</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1509460038087</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22198732" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13742071" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37710842" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3060241" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37710842" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3060241" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -407,17 +426,17 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31084338" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37710842" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22198732" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.090361446" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3060241" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -431,12 +450,16 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="starting fixing the backprop in david_vanilla_rnn" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting fixing the backprop in david_vanilla_rnn" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/utils.py</url>
-          <line>76</line>
+          <line>79</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -450,35 +473,35 @@
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py</url>
-          <line>258</line>
-          <option name="timeStamp" value="26" />
+          <url>file://$PROJECT_DIR$/utils.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py</url>
-          <line>411</line>
-          <option name="timeStamp" value="28" />
+          <line>269</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py</url>
-          <line>228</line>
-          <option name="timeStamp" value="29" />
+          <line>223</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py</url>
-          <line>184</line>
-          <option name="timeStamp" value="30" />
+          <line>419</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="31" />
+      <option name="time" value="51" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/RNN/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+        <state relative-caret-position="540">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
             <element signature="e#531#1668#0" expanded="false" />
             <element signature="e#1825#2571#0" expanded="false" />
@@ -487,16 +510,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2985">
+          <caret line="265" column="42" selection-start-line="265" selection-start-column="42" selection-end-line="265" selection-end-column="42" />
+          <folding>
+            <element signature="e#26#44#0" expanded="true" />
+            <element signature="e#541#545#0" expanded="false" />
+            <element signature="e#594#631#0" expanded="false" />
+            <element signature="e#695#945#0" expanded="false" />
+            <element signature="e#994#1186#0" expanded="false" />
+            <element signature="e#1230#1547#0" expanded="false" />
+            <element signature="e#2300#2607#0" expanded="false" />
+            <element signature="e#7586#7776#0" expanded="false" />
+            <element signature="e#7825#7862#0" expanded="false" />
+            <element signature="e#7926#8175#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#136#154#0" expanded="true" />
-            <element signature="e#480#997#0" expanded="false" />
-            <element signature="e#1052#1431#0" expanded="false" />
-            <element signature="e#1460#1714#0" expanded="false" />
-            <element signature="e#1747#2337#0" expanded="false" />
+            <element signature="e#502#1019#0" expanded="false" />
+            <element signature="e#1074#1453#0" expanded="false" />
+            <element signature="e#1482#1736#0" expanded="false" />
+            <element signature="e#1769#2359#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/raval_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="87" column="43" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <element signature="e#531#1668#0" expanded="false" />
+            <element signature="e#1825#2571#0" expanded="false" />
+            <element signature="e#3404#3999#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -512,33 +573,135 @@
             <element signature="e#695#945#0" expanded="false" />
             <element signature="e#994#1186#0" expanded="false" />
             <element signature="e#1230#1547#0" expanded="false" />
-            <element signature="e#1599#1875#0" expanded="false" />
-            <element signature="e#1926#2206#0" expanded="false" />
-            <element signature="e#2288#2595#0" expanded="false" />
-            <element signature="e#2636#3079#0" expanded="false" />
-            <element signature="e#6545#6735#0" expanded="false" />
-            <element signature="e#6784#6821#0" expanded="false" />
-            <element signature="e#6885#7134#0" expanded="false" />
-            <element signature="e#7188#7454#0" expanded="false" />
+            <element signature="e#2300#2607#0" expanded="false" />
+            <element signature="e#7586#7776#0" expanded="false" />
+            <element signature="e#7825#7862#0" expanded="false" />
+            <element signature="e#7926#8175#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/tensorflow_lstm.py">
+    <entry file="file://$PROJECT_DIR$/RNN/raval_lstm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+        <state relative-caret-position="1305">
+          <caret line="87" column="43" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#148#299#0" expanded="false" />
+            <element signature="e#531#1668#0" expanded="false" />
+            <element signature="e#1825#2571#0" expanded="false" />
+            <element signature="e#3404#3999#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/data/toy_language">
+    <entry file="file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="33" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#44#0" expanded="true" />
+            <element signature="e#541#545#0" expanded="false" />
+            <element signature="e#594#631#0" expanded="false" />
+            <element signature="e#695#945#0" expanded="false" />
+            <element signature="e#994#1186#0" expanded="false" />
+            <element signature="e#1230#1547#0" expanded="false" />
+            <element signature="e#2300#2607#0" expanded="false" />
+            <element signature="e#7586#7776#0" expanded="false" />
+            <element signature="e#7825#7862#0" expanded="false" />
+            <element signature="e#7926#8175#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/raval_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="87" column="43" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <element signature="e#531#1668#0" expanded="false" />
+            <element signature="e#1825#2571#0" expanded="false" />
+            <element signature="e#3404#3999#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#44#0" expanded="true" />
+            <element signature="e#541#545#0" expanded="false" />
+            <element signature="e#594#631#0" expanded="false" />
+            <element signature="e#695#945#0" expanded="false" />
+            <element signature="e#994#1186#0" expanded="false" />
+            <element signature="e#1230#1547#0" expanded="false" />
+            <element signature="e#2300#2607#0" expanded="false" />
+            <element signature="e#7586#7776#0" expanded="false" />
+            <element signature="e#7825#7862#0" expanded="false" />
+            <element signature="e#7926#8175#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/raval_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="87" column="43" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <element signature="e#531#1668#0" expanded="false" />
+            <element signature="e#1825#2571#0" expanded="false" />
+            <element signature="e#3404#3999#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#44#0" expanded="true" />
+            <element signature="e#541#545#0" expanded="false" />
+            <element signature="e#594#631#0" expanded="false" />
+            <element signature="e#695#945#0" expanded="false" />
+            <element signature="e#994#1186#0" expanded="false" />
+            <element signature="e#1230#1547#0" expanded="false" />
+            <element signature="e#2300#2607#0" expanded="false" />
+            <element signature="e#7586#7776#0" expanded="false" />
+            <element signature="e#7825#7862#0" expanded="false" />
+            <element signature="e#7926#8175#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/raval_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="87" column="43" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -560,11 +723,10 @@
         <state relative-caret-position="420">
           <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
           <folding>
-            <element signature="e#136#154#0" expanded="true" />
-            <element signature="e#480#997#0" expanded="false" />
-            <element signature="e#1052#1431#0" expanded="false" />
-            <element signature="e#1460#1714#0" expanded="false" />
-            <element signature="e#1747#2337#0" expanded="false" />
+            <element signature="e#502#1019#0" expanded="false" />
+            <element signature="e#1074#1453#0" expanded="false" />
+            <element signature="e#1482#1736#0" expanded="false" />
+            <element signature="e#1769#2359#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -580,14 +742,10 @@
             <element signature="e#695#945#0" expanded="false" />
             <element signature="e#994#1186#0" expanded="false" />
             <element signature="e#1230#1547#0" expanded="false" />
-            <element signature="e#1599#1875#0" expanded="false" />
-            <element signature="e#1926#2206#0" expanded="false" />
-            <element signature="e#2288#2595#0" expanded="false" />
-            <element signature="e#2636#3079#0" expanded="false" />
-            <element signature="e#6545#6735#0" expanded="false" />
-            <element signature="e#6784#6821#0" expanded="false" />
-            <element signature="e#6885#7134#0" expanded="false" />
-            <element signature="e#7188#7454#0" expanded="false" />
+            <element signature="e#2300#2607#0" expanded="false" />
+            <element signature="e#7586#7776#0" expanded="false" />
+            <element signature="e#7825#7862#0" expanded="false" />
+            <element signature="e#7926#8175#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -597,7 +755,69 @@
         <state relative-caret-position="1500">
           <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
+            <element signature="e#148#299#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/data/toy_language">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="33" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+          <folding>
+            <element signature="e#531#1668#0" expanded="false" />
+            <element signature="e#1825#2571#0" expanded="false" />
+            <element signature="e#3404#3999#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+          <folding>
+            <element signature="e#502#1019#0" expanded="false" />
+            <element signature="e#1074#1453#0" expanded="false" />
+            <element signature="e#1482#1736#0" expanded="false" />
+            <element signature="e#1769#2359#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#44#0" expanded="true" />
+            <element signature="e#541#545#0" expanded="false" />
+            <element signature="e#594#631#0" expanded="false" />
+            <element signature="e#695#945#0" expanded="false" />
+            <element signature="e#994#1186#0" expanded="false" />
+            <element signature="e#1230#1547#0" expanded="false" />
+            <element signature="e#2300#2607#0" expanded="false" />
+            <element signature="e#7586#7776#0" expanded="false" />
+            <element signature="e#7825#7862#0" expanded="false" />
+            <element signature="e#7926#8175#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/tensorflow_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
             <element signature="e#148#299#0" expanded="false" />
           </folding>
         </state>
@@ -620,11 +840,10 @@
         <state relative-caret-position="930">
           <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
-            <element signature="e#136#154#0" expanded="true" />
-            <element signature="e#480#997#0" expanded="false" />
-            <element signature="e#1052#1431#0" expanded="false" />
-            <element signature="e#1460#1714#0" expanded="false" />
-            <element signature="e#1747#2337#0" expanded="false" />
+            <element signature="e#502#1019#0" expanded="false" />
+            <element signature="e#1074#1453#0" expanded="false" />
+            <element signature="e#1482#1736#0" expanded="false" />
+            <element signature="e#1769#2359#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -640,14 +859,10 @@
             <element signature="e#695#945#0" expanded="false" />
             <element signature="e#994#1186#0" expanded="false" />
             <element signature="e#1230#1547#0" expanded="false" />
-            <element signature="e#1599#1875#0" expanded="false" />
-            <element signature="e#1926#2206#0" expanded="false" />
-            <element signature="e#2288#2595#0" expanded="false" />
-            <element signature="e#2636#3079#0" expanded="false" />
-            <element signature="e#6545#6735#0" expanded="false" />
-            <element signature="e#6784#6821#0" expanded="false" />
-            <element signature="e#6885#7134#0" expanded="false" />
-            <element signature="e#7188#7454#0" expanded="false" />
+            <element signature="e#2300#2607#0" expanded="false" />
+            <element signature="e#7586#7776#0" expanded="false" />
+            <element signature="e#7825#7862#0" expanded="false" />
+            <element signature="e#7926#8175#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -656,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="33" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,13 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/raval_lstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="298" column="69" selection-start-line="298" selection-start-column="69" selection-end-line="298" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RNN/data/thrush.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -695,26 +902,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/notebooks/Untitled.ipynb" />
+    <entry file="file://$PROJECT_DIR$/RNN/tensorflow_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="842">
+          <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+            <element signature="e#148#299#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/raval_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="87" column="43" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/numpy/core/fromnumeric.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/notebooks/Untitled.ipynb" />
-    <entry file="file://$PROJECT_DIR$/RNN/data/toy_language">
+    <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="33" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="330">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#502#1019#0" expanded="false" />
+            <element signature="e#1074#1453#0" expanded="false" />
+            <element signature="e#1482#1736#0" expanded="false" />
+            <element signature="e#1769#2359#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RNN/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
+        <state relative-caret-position="188">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
             <element signature="e#531#1668#0" expanded="false" />
             <element signature="e#1825#2571#0" expanded="false" />
@@ -723,35 +955,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
+    <entry file="file://$PROJECT_DIR$/RNN/data/toy_language">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-          <folding>
-            <element signature="e#136#154#0" expanded="true" />
-            <element signature="e#480#997#0" expanded="false" />
-            <element signature="e#1052#1431#0" expanded="false" />
-            <element signature="e#1460#1714#0" expanded="false" />
-            <element signature="e#1747#2337#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/tensorflow_lstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#148#299#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="190" column="16" selection-start-line="190" selection-start-column="16" selection-end-line="190" selection-end-column="16" />
+        <state relative-caret-position="383">
+          <caret line="413" column="53" selection-start-line="413" selection-start-column="53" selection-end-line="413" selection-end-column="53" />
           <folding>
             <element signature="e#26#44#0" expanded="true" />
             <element signature="e#541#545#0" expanded="false" />
@@ -759,14 +974,10 @@
             <element signature="e#695#945#0" expanded="false" />
             <element signature="e#994#1186#0" expanded="false" />
             <element signature="e#1230#1547#0" expanded="false" />
-            <element signature="e#1599#1875#0" expanded="false" />
-            <element signature="e#1926#2206#0" expanded="false" />
-            <element signature="e#2288#2595#0" expanded="false" />
-            <element signature="e#2636#3079#0" expanded="false" />
-            <element signature="e#6545#6735#0" expanded="false" />
-            <element signature="e#6784#6821#0" expanded="false" />
-            <element signature="e#6885#7134#0" expanded="false" />
-            <element signature="e#7188#7454#0" expanded="false" />
+            <element signature="e#2300#2607#0" expanded="false" />
+            <element signature="e#7586#7776#0" expanded="false" />
+            <element signature="e#7825#7862#0" expanded="false" />
+            <element signature="e#7926#8175#0" expanded="false" />
           </folding>
         </state>
       </provider>
