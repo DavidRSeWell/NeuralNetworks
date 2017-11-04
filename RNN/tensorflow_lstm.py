@@ -72,7 +72,7 @@ def main():
     learning_rate = 0.001
     training_iters = 15000
     display_step = 1000
-    n_input = 1
+    n_input = 0
 
     # number of units in RNN cell
     n_hidden = 100

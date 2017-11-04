@@ -110,9 +110,11 @@ def build_dataset(words):
 
         dictionary[word] = len(dictionary)'''
 
+
     dictionary = dict()
 
-    for i in range(len(words)):
+    for i in range(len(set(words))):
+        if words[i] in dictionary:continue
         dictionary[words[i]] = i
 
     reverse_dictionary = dict(zip(dictionary.values(), dictionary.keys()))
