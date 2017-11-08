@@ -41,9 +41,9 @@ def main():
 
     # Parameters
     learning_rate = 0.001
-    training_iters = 15000
+    training_iters = 10000
     display_step = 1000
-    window = 2
+    window = 1
 
     # number of units in RNN cell
     h_dimension = 100
