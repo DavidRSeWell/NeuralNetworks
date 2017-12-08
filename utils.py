@@ -87,6 +87,7 @@ def read_data(fname):
     with open(fname) as f:
         content = f.readlines()
     content = [x.strip() for x in content]
+    content = [x.rstrip('\n') for x in content]
     content = [content[i].split() for i in range(len(content))]
     content = np.array(content)
     content = np.reshape(content, [-1, ])
@@ -113,15 +114,22 @@ def build_dataset(words):
 
     dictionary = dict()
 
-    for i in range(len(set(words))):
-        if words[i] in dictionary:continue
-        dictionary[words[i]] = i
+    j = 0
+    for i in range(len(words)):
+
+        if words[i] in dictionary:
+            continue
+
+        else:
+
+            dictionary[words[i]] = j
+            j += 1
 
     reverse_dictionary = dict(zip(dictionary.values(), dictionary.keys()))
 
     one_hot_vocab = np.zeros((len(words),len(set(words))))
 
-    for i in range(len(words)):
+    for i in range(len((words))):
 
         one_hot_vocab[i][dictionary[words[i]]] = 1
 

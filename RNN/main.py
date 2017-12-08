@@ -104,6 +104,8 @@ if run_tensorflow_lstm:
 run_david_rnn = 1
 if run_david_rnn:
 
+    print "runnin davids rnn"
+
     import david_vanilla_rnn
 
     import numpy as np
