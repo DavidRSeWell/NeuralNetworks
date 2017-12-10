@@ -311,7 +311,6 @@ def LoadText():
         output[:, i] = returnData[0:-1, index[0]].astype(float).ravel()
     return returnData, uniqueWords, output, outputSize, data,text
 
-
 # write the predicted output (series of words) to disk
 def ExportText(output, data):
     finalOutput = np.zeros_like(output)
