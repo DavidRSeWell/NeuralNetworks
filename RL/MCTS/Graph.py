@@ -83,6 +83,7 @@ class TreeGraph:
 
         return graph
 
+
     def add_edges(self,graph, edges):
 
         for e in edges:
