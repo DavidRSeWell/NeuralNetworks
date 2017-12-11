@@ -5,46 +5,16 @@
 import graphviz as gv
 
 
-class Node:
+class Tree(object):
 
-    def __init__(self,player,pot):
+    NodeIndex = 0
 
-        self.player = player
+    def __init__(self,nodes=[]):
 
-        self.pot = pot
-
-
-class Tree:
-
-    Nodeindex = 0 # class attribute used to track the index of nodes
-    '''
-        General Tree structure:
-                A
-                |
-              / | |
-            A1 A2 A3
-
-        Each node is itself a Tree
-        whith attributes player,pot
-    '''
-
-    def __init__(self,player,pot,parent=None,action=None,children=[]):
-
-        self.player = player
-
-        self.pot = pot
-
-        self.action = action
-
-        self.children = children
-
-        self.parent = parent
-
-        self.node_index = Tree.Nodeindex
+        self.__nodes = nodes
 
 
-
-    def set_root(self,player,init_pot):
+    def set_root(self,node):
 
         '''
         Init the tree with the first player in the list as the
@@ -52,12 +22,12 @@ class Tree:
         :return:
         '''
 
-        root = Node(player,init_pot)
+        assert(Tree.NodeIndex == 0) # this method should only be used for setting initial root
 
-        self.root = root
+        self.__nodes.insert(0,node)
 
 
-    def add_node(self,player,action,amount=None):
+    def add_node(self,node):
 
         '''
         Adds a node to the current tree
@@ -67,31 +37,28 @@ class Tree:
         :return: None
         '''
 
-        new_pot = self.pot
+        Tree.NodeIndex += 1
 
-        Tree.Nodeindex += 1
+        node.node_index = Tree.NodeIndex
 
-        if action == "bet" or action == "raise" or action == "call":
+        self.__nodes.append(node) # add the new node to the list of nodes on the tree
 
-            try:
-                assert amount > 0
-
-                new_pot += amount
-
-            except Exception,e:
-
-                print "Error: Bet amount must be > 0"
+        node.parent.children.append(node) # add the node to parents list of children
 
 
-        new_child = Tree(player,new_pot,parent=self,action=action)
+    def get_root(self):
 
-        self.children.append(new_child)
-
-        return new_child
+        return self.__nodes[0]
 
 
+    def get_node(self,index):
+
+        return self.__nodes[index]
 
 
+    def get_nodes(self):
+
+        return self.__nodes
 
 
 

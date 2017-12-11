@@ -5,17 +5,16 @@
 import graphviz as gv
 
 
-class TreeGraph:
+class TreeGraph(object):
 
     '''
         Class used for providing a graphical representation of graphs
     '''
-    def __init__(self,tree,graph=None):
+    def __init__(self,tree=None,graph=None):
 
         self.tree = tree
 
         self.graph = graph
-
 
 
     def graph_from_tree(self,tree):
@@ -29,15 +28,11 @@ class TreeGraph:
 
         # first add root node
 
-        if len(tree.children) == 0:
+        if tree.node_index == 0:
 
             label = tree.player + ' \\n ' + 'Pot: ' + str(tree.pot)
 
             self.graph.node(str(tree.node_index),label)
-
-            self.graph.edge(str(tree.node_index),str(tree.parent.node_index),str(tree.action))
-
-        else:
 
             for child in tree.children:
 
@@ -45,11 +40,36 @@ class TreeGraph:
 
                 self.graph.node(str(child.node_index),label)
 
-                self.graph.edge(str(child.node_index), str(child.parent.node_index), str(child.action))
+                self.graph.edge(str(child.parent.node_index),str(child.node_index), str(child.action))
 
                 self.graph_from_tree(child)
 
-    def create_graph_from_tree(self,tree):
+            #self.graph.edge(str(tree.parent.node_index),str(tree.node_index),str(tree.action))
+
+
+        else:
+
+            if (len(tree.children) == 0):
+
+                label = tree.player + ' \\n ' + 'Pot: ' + str(tree.pot)
+
+                self.graph.node(str(tree.node_index), label)
+
+                self.graph.edge(str(tree.parent.node_index), str(tree.node_index), str(tree.action))
+
+            else:
+
+                for child in tree.children:
+
+                    label = tree.player + ' \\n ' + 'Pot: ' + str(tree.pot)
+
+                    self.graph.node(str(child.node_index),label)
+
+                    self.graph.edge(str(child.parent.node_index),str(child.node_index), str(child.action))
+
+                    self.graph_from_tree(child)
+
+    def create_graph_from_tree(self):
 
         '''
 
@@ -59,18 +79,21 @@ class TreeGraph:
         :return:
         '''
 
-        # first add root node
-        self.graph.node('0','p1 \\n Pot: ' + str(self.tree.pot))
+        tree_nodes = self.tree.get_nodes()
 
+        for node in tree_nodes:
 
-        for child in self.tree.children:
+            label = node.player + ' \\n ' + 'Pot: ' + str(node.pot)
 
-            label = child.player + ' \\n ' + child.action
+            self.graph.node(str(node.node_index),label)
 
-            self.graph.node(str(child.node_index),label)
+            for child in node.children:
 
-            self.graph.edge(str(child.node_index))
+                label = child.player + ' \\n ' + 'Pot: ' + str(child.pot)
 
+                self.graph.node(str(child.node_index),label)
+
+                self.graph.edge(str(node.node_index),str(child.node_index), str(child.action.keys()[0]))
 
     def add_nodes(self,graph, nodes):
 

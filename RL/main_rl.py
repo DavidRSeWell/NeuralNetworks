@@ -2,7 +2,7 @@
 module for running RL programs
 '''
 
-from RL.MCTS import Tree,Graph
+from RL.MCTS import Game,Tree,Graph
 import graphviz as gv
 
 run_akq_game = 1
@@ -12,7 +12,7 @@ if run_akq_game:
         Define the game
 
     '''
-
+    '''
     players = ["player1","player2"]
 
     AKQ_tree = Tree.Tree("player1",1)
@@ -29,11 +29,7 @@ if run_akq_game:
     bet_v_check.add_node("player2","call",1)
     bet_v_check.add_node("player2","fold")
 
-    '''
-
         Define the graph
-
-    '''
 
     graph_viz = gv.Digraph()
 
@@ -41,4 +37,46 @@ if run_akq_game:
 
     full_graph = graph.graph_from_tree(AKQ_tree)
 
-    print "ALLLL INNNNN"
+    '''
+
+    tree = Tree.Tree()
+
+    players = ["p1","p2"]
+
+    init_pot = 1
+
+    akq_game = Game.GameState(tree=tree,players=players,name='akq_game')
+
+    akq_game.set_root(players[0],init_pot)
+
+    root = akq_game.tree.get_root()
+
+    akq_game.new_action(current_index=0,player="p1",action={"bet":1})
+    akq_game.new_action(current_index=0,player="p1",action={"check":0})
+
+    akq_game.new_action(current_index=1,player="p2",action={"call":1})
+    akq_game.new_action(current_index=1,player="p2",action={"fold":0})
+
+    akq_game.new_action(current_index=2,player="p2",action={"bet":1})
+    akq_game.new_action(current_index=2,player="p2",action={"check":0})
+
+    akq_game.new_action(current_index=5,player="p2",action={"call":1})
+    akq_game.new_action(current_index=5,player="p2",action={"fold":0})
+
+    new_graph = gv.Digraph(format="png")
+
+    AKQGraph = Graph.TreeGraph(tree=akq_game.tree,graph=new_graph)
+
+    #label = tree.player + ' \\n ' + 'Pot: ' + str(tree.pot)
+
+    #self.graph.node(str(tree.node_index), label)
+
+    #AKQGraph.graph.node
+
+    #AKQGraph.graph_from_tree(akq_game.tree.get_root())
+
+    AKQGraph.create_graph_from_tree()
+
+    AKQGraph.graph.render('data/img/test')
+
+    print "Game set match "
