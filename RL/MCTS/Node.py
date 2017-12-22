@@ -31,3 +31,7 @@ class Node(object):
         self.children = []
 
         self.parent = parent
+
+        self.visit_count = 0 # number of times the node has been visited in MCTS
+
+        self.current_value = 0 # value of node for current player
