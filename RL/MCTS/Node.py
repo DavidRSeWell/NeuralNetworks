@@ -35,3 +35,5 @@ class Node(object):
         self.visit_count = 0 # number of times the node has been visited in MCTS
 
         self.current_value = 0 # value of node for current player
+
+        self.range = {}

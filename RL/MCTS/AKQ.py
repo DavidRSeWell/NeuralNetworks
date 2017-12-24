@@ -150,3 +150,13 @@ class AkqMC(MCTS):
                     current_node = current_node.children[0]
 
                     self.rollout(current_node)
+
+
+    def equity(self,range1,range2):
+
+        win_percent = range1["A"]*range2["K"] + range1["A"]*range2["Q"] +\
+            range1["K"]*range2["Q"]
+
+        tie_percent = range1["A"] * range2["A"] + range1["K"] * range2["K"] + \
+                      range1["Q"] * range2["Q"]
+
