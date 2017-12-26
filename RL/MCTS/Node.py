@@ -8,6 +8,7 @@
 class Node(object):
 
     '''
+
         General Tree structure:
                 A
                 |
@@ -16,9 +17,11 @@ class Node(object):
 
         Each node is itself a Tree
         whith attributes player,pot
+
     '''
 
-    def __init__(self,player,pot,parent=None,action=None,node_index=None):
+    def __init__(self,player,pot,parent=None,action=None,node_index=None,
+                 is_leaf=False,range1={},range2={}):
 
         self.node_index = node_index
 
@@ -36,4 +39,8 @@ class Node(object):
 
         self.current_value = 0 # value of node for current player
 
-        self.range = {}
+        self.range1 = range1 # the range of the current player
+
+        self.range2 = range2 # the range of the parent
+
+        self.is_leaf = is_leaf
