@@ -57,208 +57,129 @@ import random
 import numpy as np
 
 from RL.MCTS.Model import MCTS
-from RL.MCTS.Node import Node
+from RL.MCTS.Node import AKQNode
+from RL.MCTS.Tree import Tree
 
 
-class AkqMC(MCTS):
 
-    def __init__(self,tree):
+class ExtensiveFormMCTS():
+
+    def __init__(self):
+
         pass
 
-    def rollout_random(self,node,num_iterations=10):
-
+    def search(game):
         '''
-        Perform rollout by taking random actions from the current
-        node until you have reached a leaf node
-        :param node:
-        :param num_iterations: Number of times to run to completion
-        :return: average value over the iterations. V/num_iteration
+            While within budget
+                Sample initial game state
+                simulate(s_o)
+            end
+
+            return policy
         '''
+        pass
 
-        tot_value = 0
-
-        for i in range(num_iterations):
-
-            current_node = node
-
-            while(True):
-
-                if current_node.is_leaf:
-
-                    tot_value += self.node_value(current_node)
-
-                    break
-
-                actions = self.avail_actions(current_node)
-
-                random_action = random.choice(actions)
-
-                current_node = self.simulate(random_action,current_node)
-
-        return tot_value / float(num_iterations)
-
-    def avail_actions(self,node):
+    def rollout(s):
         '''
-        The available actions depend directly on what the parent action was
-        For the AKQ game the bet option is only bet 1
-        IF BET:
-            avail: [call,fold]
+            takes in a state
+            gets action based off of a rollout policy - i.e random actions, ect...
+            new state s' from G(s,a) - transition simulator
+            return simulate(s')
+        '''
+        pass
 
-        ELIF CHECK:
-            avail: [bet 1, check]
-        :param node:
-        :return:
+    def simulate(s):
+        '''
+            Takes in a state
+
+            if state.terminal == True:
+                return reward
+
+            Player = player(s)
+            if Player.out_of_tree == True:
+                return rollout(s)
+            InfoState = information_function(s) maps state to info state
+            if InfoState not in PlayerTree:
+                Expand(PlayerTree,InfoState)
+                a = rollout_policy
+                Player.out_of_tree = True
+            else:
+                a = select(InfoState)
+            s' = G(s,a)
+            r = simulate(s')
+            update(InfoState,a,r)
+            return r
         '''
 
-        if node.action == "bet":
 
-            return ["call","fold"]
+        pass
 
-        elif node.action == "check":
-
-            return ["bet","check"]
-
-    def node_value(self,node):
+    def select_uct(u_i):
+        '''
+            select action that maximizes
+            Q(u,a) + c sqrt( log(N(u))/N(u,a) )
 
         '''
+        pass
 
-        Assumes the node is a leaf node
-        Value depends on the action to get there
-
-        if parent action was fold then the player for the
-        leaf node will have a value of S + P
-        and the other player will have a value of S
-
-        if parent action is a call then the value for both players
-        will be their Stack plus their share of the pot
-
-        For evaluating a call we only care about the current ranges of
-        the players
-
-        :param node:
-
-        :return:
-
+    def update(u_i, a, r):
         '''
+        N(u_i) += 1
+        N(u,a) += 1
+        Q(u,a) += (r - Q(u,a)) / N(u,a)
+        '''
+        pass
 
-    def get_opponent(self,player):
 
-        if player == "player1":
 
-            return "player2"
+class AKQGameState(object):
+
+    '''
+    class used for simulating a simple AKQ poker game
+    The game state needs to deal random cards to each player
+    and to track the button
+    '''
+
+    def __init__(self,players):
+
+        self.players = players
+
+        self.deck = ['A','K','Q']
+
+
+    def deal_hand(self):
+
+        return random.choice(self.deck)
+
+
+    def run(self,num_iterations):
+
+        sb_player = random.choice(self.players)
+
+        if self.players[0] == sb_player:
+
+            bb_player = self.players[1]
 
         else:
 
-            return "player1"
-
-    def simulate(self,action,node):
-
-        '''
-        For the AKQ game we are just going to implement a simple
-        random rollout. That means we just choose a random action
-        for each player until we are at a leaf node and then return
-        the value
-        :param action:
-        :param node:
-        :return:
-        '''
-
-        current_player = self.get_opponent(node.player)
-
-        current_pot = node.pot
-
-        is_leaf = False
-
-        range2 = node.range1 # this will change dependent on the action
-
-        if action == "bet":
-
-            current_pot += 1
-
-            range2 = self.get_random_range(range2)
-
-        if action == "check" and node.action == "check":
-
-            is_leaf = True # It was checked down
-
-        elif action == "call":
-
-            current_pot += 1
-
-            range2 = self.get_random_range(range2)
-
-            is_leaf = True
-
-        elif action == "fold":
-
-            is_leaf = True
-
-        new_node = Node(current_player,current_pot,parent=node,action=action,
-                        is_leaf=is_leaf,range1=node.range2,range2=range2)
-
-        return new_node
-
-    def equity(self,range1,range2):
-
-        win_percent = range1["A"]*range2["K"] + range1["A"]*range2["Q"] +\
-            range1["K"]*range2["Q"]
-
-        tie_percent = range1["A"] * range2["A"] + range1["K"] * range2["K"] + \
-                      range1["Q"] * range2["Q"]
-
-        return (win_percent,tie_percent)
-
-    def get_random_range(self,range):
-
-        '''
-
-        Takes the current range and returns a new range
-        with randomly selected % of each card in that range
-        :param range:
-        :return:
-
-        '''
-
-        new_range = {"A":np.random.random(),"K":np.random.random(),"Q":np.random.random()}
-
-        return new_range
-
-    def main(self, num_iterations):
-        '''
-                main algorithm loop
-                4 main parts
-                1 - Tree traversal
-                2 - node expansion
-                3 - rollout
-                4 - backpropagation
-                :return:
-                '''
-
-        init_node = None
-
-        current_node = init_node
+            bb_player = self.players[0]
 
         for i in range(num_iterations):
 
-            current_node.visit_count += 1
+            self.deck = ['A','K','Q'] # reshuffle the cards yo
 
-            # check is current node a leaf
-            if self.is_leaf(init_node):
+            # deals cards to each player
 
-                # is the value of the current node == 0?
-                # if so then just rollout
-                if (current_node.current_value == 0):
+            sb_card = self.deal_hand()
 
-                    roll_value = self.rollout(current_node)
+            self.deck.remove(sb_player)
 
-                    current_node.current_value = roll_value
+            bb_card = self.deal_hand()
 
-                else:
-                    # for each avail action from current node
-                    # add a new state/node
-                    for action in self.avail_actions(current_node):
-                        self.tree.add_node(action)
 
-                    current_node = current_node.children[0]
 
-                    self.rollout(current_node)
+
+
+
+
+

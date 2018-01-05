@@ -35,13 +35,11 @@ class GameState(object):
 
         print "Finished initializing the game state"
 
-
     def set_root(self,player,pot):
 
         new_node = Node.Node(player,pot=pot,node_index=0)
 
         self.tree.set_root(new_node)
-
 
     def new_action(self,current_index,player,action):
 
@@ -63,7 +61,6 @@ class GameState(object):
         new_node = Node.Node(opponent,pot=new_pot,parent=current_node,action=action)
 
         self.tree.add_node(new_node)
-
 
     def get_new_pot(self,pot,action):
 
@@ -92,7 +89,6 @@ class GameState(object):
                 print "Error: Bet amount must be > 0"
 
         return new_pot
-
 
     def get_opponent(self,player):
 

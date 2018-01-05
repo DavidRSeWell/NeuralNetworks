@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99d5ac5-858d-48fa-b062-82d540bbf8ca" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RL/MCTS/AKQ_old.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RL/MCTS/AKQ.py" afterPath="$PROJECT_DIR$/RL/MCTS/AKQ.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RL/MCTS/Game.py" afterPath="$PROJECT_DIR$/RL/MCTS/Game.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RL/MCTS/Node.py" afterPath="$PROJECT_DIR$/RL/MCTS/Node.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RL/MCTS/Tree.py" afterPath="$PROJECT_DIR$/RL/MCTS/Tree.py" />
     </list>
     <ignored path="NeuralNetworks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,79 +26,88 @@
     <favorites_list name="NeuralNetworks" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.53874815">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="AKQ.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/RL/MCTS/AKQ.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="712">
-                  <caret line="263" column="46" selection-start-line="263" selection-start-column="46" selection-end-line="263" selection-end-column="46" />
-                  <folding>
-                    <element signature="e#43#833#1" expanded="false" />
-                    <element signature="e#835#848#0" expanded="true" />
-                    <element signature="e#989#993#0" expanded="false" />
-                    <element signature="e#1057#1839#0" expanded="false" />
-                    <element signature="e#1883#2312#0" expanded="false" />
-                    <element signature="e#2354#2872#0" expanded="false" />
-                    <element signature="e#2918#3016#0" expanded="false" />
-                    <element signature="e#3063#4142#0" expanded="false" />
-                    <element signature="e#4511#4801#0" expanded="false" />
-                    <marker date="1514318513000" expanded="false" signature="4179:4462" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Game.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/RL/MCTS/Game.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="697">
-                  <caret line="102" column="13" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
-                  <folding>
-                    <element signature="e#618#702#0" expanded="false" />
-                    <element signature="e#749#836#0" expanded="false" />
-                    <element signature="e#902#1405#0" expanded="false" />
-                    <element signature="e#1455#1932#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="test.png" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/RL/data/img/test.png">
-              <provider selected="true" editor-type-id="images">
-                <state />
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Node.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/RL/MCTS/Node.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="Node.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/RL/MCTS/Node.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AKQ.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RL/MCTS/AKQ.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+              <folding>
+                <element signature="e#43#833#1" expanded="false" />
+                <element signature="e#1063#1238#0" expanded="false" />
+                <element signature="e#1268#1500#0" expanded="false" />
+                <element signature="e#1531#2172#0" expanded="false" />
+                <element signature="e#2207#2325#0" expanded="false" />
+                <element signature="e#2362#2470#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tree.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RL/MCTS/Tree.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding>
+                <element signature="e#256#525#0" expanded="false" />
+                <element signature="e#565#975#0" expanded="false" />
+                <element signature="e#1010#1032#0" expanded="false" />
+                <element signature="e#1073#1099#0" expanded="false" />
+                <element signature="e#1135#1154#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AKQ_old.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RL/MCTS/AKQ_old.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <element signature="e#2#15#0" expanded="true" />
+                <element signature="e#237#1019#0" expanded="false" />
+                <element signature="e#1063#1492#0" expanded="false" />
+                <element signature="e#1534#2052#0" expanded="false" />
+                <element signature="e#2098#2196#0" expanded="false" />
+                <element signature="e#2243#3322#0" expanded="false" />
+                <element signature="e#3369#3642#0" expanded="false" />
+                <element signature="e#3691#3981#0" expanded="false" />
+                <element signature="e#4080#5309#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RL/MCTS/Game.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding>
+                <element signature="e#618#702#0" expanded="false" />
+                <element signature="e#748#835#0" expanded="false" />
+                <element signature="e#900#1403#0" expanded="false" />
+                <element signature="e#1452#1929#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Node.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RL/MCTS/Node.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+              <folding>
+                <element signature="e#97#1004#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -141,14 +153,15 @@
         <option value="$PROJECT_DIR$/RL/MCTS/__init__.py" />
         <option value="$PROJECT_DIR$/RL/__init__.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
-        <option value="$PROJECT_DIR$/RL/MCTS/Tree.py" />
         <option value="$PROJECT_DIR$/RL/main_rl.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/model.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/Graph.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/Model.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/Game.py" />
-        <option value="$PROJECT_DIR$/RL/MCTS/Node.py" />
+        <option value="$PROJECT_DIR$/RL/MCTS/AKQ_old.py" />
+        <option value="$PROJECT_DIR$/RL/MCTS/Tree.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/AKQ.py" />
+        <option value="$PROJECT_DIR$/RL/MCTS/Node.py" />
       </list>
     </option>
   </component>
@@ -196,6 +209,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="NeuralNetworks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NeuralNetworks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NeuralNetworks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RL" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NeuralNetworks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NeuralNetworks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RL" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MCTS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -539,14 +584,21 @@
       <option name="project" value="LOCAL" />
       <updated>1514154064350</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Almost done with AKQ game just finished basic random rollout">
+      <created>1514318580978</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1514318580978</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.054263566" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13319239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -607,7 +659,8 @@
     <MESSAGE value="Just finished success run of creating a AKQ tree and graphic!!" />
     <MESSAGE value="Working on AKQ model" />
     <MESSAGE value="Working on the rollout function for the AKQ game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on the rollout function for the AKQ game" />
+    <MESSAGE value="Almost done with AKQ game just finished basic random rollout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost done with AKQ game just finished basic random rollout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -638,13 +691,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RNN/david_vanilla_rnn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -917,19 +963,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RL/MCTS/Tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RL/main_rl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="772">
           <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
           <folding>
-            <element signature="e#40#75#0" expanded="true" />
+            <element signature="e#40#75#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -961,47 +1000,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RL/data/img/test.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RL/MCTS/AKQ_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#2#15#0" expanded="true" />
+            <element signature="e#237#1019#0" expanded="false" />
+            <element signature="e#1063#1492#0" expanded="false" />
+            <element signature="e#1534#2052#0" expanded="false" />
+            <element signature="e#2098#2196#0" expanded="false" />
+            <element signature="e#2243#3322#0" expanded="false" />
+            <element signature="e#3369#3642#0" expanded="false" />
+            <element signature="e#3691#3981#0" expanded="false" />
+            <element signature="e#4080#5309#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RL/MCTS/Game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="102" column="13" selection-start-line="102" selection-start-column="13" selection-end-line="102" selection-end-column="13" />
+        <state relative-caret-position="330">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#618#702#0" expanded="false" />
-            <element signature="e#749#836#0" expanded="false" />
-            <element signature="e#902#1405#0" expanded="false" />
-            <element signature="e#1455#1932#0" expanded="false" />
+            <element signature="e#748#835#0" expanded="false" />
+            <element signature="e#900#1403#0" expanded="false" />
+            <element signature="e#1452#1929#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RL/MCTS/Tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#256#525#0" expanded="false" />
+            <element signature="e#565#975#0" expanded="false" />
+            <element signature="e#1010#1032#0" expanded="false" />
+            <element signature="e#1073#1099#0" expanded="false" />
+            <element signature="e#1135#1154#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RL/MCTS/AKQ.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+          <folding>
+            <element signature="e#43#833#1" expanded="false" />
+            <element signature="e#1063#1238#0" expanded="false" />
+            <element signature="e#1268#1500#0" expanded="false" />
+            <element signature="e#1531#2172#0" expanded="false" />
+            <element signature="e#2207#2325#0" expanded="false" />
+            <element signature="e#2362#2470#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RL/MCTS/Node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RL/data/img/test.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RL/MCTS/AKQ.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="263" column="46" selection-start-line="263" selection-start-column="46" selection-end-line="263" selection-end-column="46" />
+        <state relative-caret-position="157">
+          <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
           <folding>
-            <element signature="e#43#833#1" expanded="false" />
-            <element signature="e#835#848#0" expanded="true" />
-            <element signature="e#989#993#0" expanded="false" />
-            <element signature="e#1057#1839#0" expanded="false" />
-            <element signature="e#1883#2312#0" expanded="false" />
-            <element signature="e#2354#2872#0" expanded="false" />
-            <element signature="e#2918#3016#0" expanded="false" />
-            <element signature="e#3063#4142#0" expanded="false" />
-            <element signature="e#4511#4801#0" expanded="false" />
-            <marker date="1514318513000" expanded="false" signature="4179:4462" ph="..." />
+            <element signature="e#97#1004#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -7,12 +7,11 @@ import graphviz as gv
 
 class Tree(object):
 
-    NodeIndex = 0
+    NodeIndex = 0 # name this node count?
 
     def __init__(self,nodes=[]):
 
         self.__nodes = nodes
-
 
     def set_root(self,node):
 
@@ -25,7 +24,6 @@ class Tree(object):
         assert(Tree.NodeIndex == 0) # this method should only be used for setting initial root
 
         self.__nodes.insert(0,node)
-
 
     def add_node(self,node):
 
@@ -45,16 +43,13 @@ class Tree(object):
 
         node.parent.children.append(node) # add the node to parents list of children
 
-
     def get_root(self):
 
         return self.__nodes[0]
 
-
     def get_node(self,index):
 
         return self.__nodes[index]
-
 
     def get_nodes(self):
 
