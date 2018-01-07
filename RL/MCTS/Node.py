@@ -51,8 +51,33 @@ class Node(object):
 class InfoNode(object):
 
     '''
+
     Nodes used in incomplete information games
+
     '''
+
+    def __init__(self, player, pot, parent=None, action=None, node_index=None,
+                 is_leaf=False):
+
+        self.node_index = node_index
+
+        self.player = player
+
+        self.pot = pot
+
+        self.action = action
+
+        self.children = []
+
+        self.parent = parent
+
+        self.visit_count = 0  # number of times the node has been visited in MCTS
+
+        self.current_ev_value = 0  # total value of node for current player
+
+        # self.current_ucb1 = 0 # average ev + 2 * sqrt ( ln (total iterations) / visit_count)
+
+        self.is_leaf = is_leaf
 
 
 class AKQNode(object):
@@ -86,7 +111,7 @@ class AKQNode(object):
 
         self.visit_count = 0  # number of times the node has been visited in MCTS
 
-        self.current_ev_value = 0  # total value of node for current player
+        self.current_ev_value = 0  # total value of node for current player, not used in extensive form games
 
         # self.current_ucb1 = 0 # average ev + 2 * sqrt ( ln (total iterations) / visit_count)
 

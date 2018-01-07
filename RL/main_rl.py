@@ -65,7 +65,8 @@ if run_akq_game:
 
     new_graph = gv.Digraph(format="png")
 
-    AKQGraph = Graph.TreeGraph(tree=akq_game.tree,graph=new_graph)
+
+    #AKQGraph = Graph.TreeGraph(tree=akq_game.tree,graph=new_graph)
 
     #label = tree.player + ' \\n ' + 'Pot: ' + str(tree.pot)
 
@@ -75,8 +76,8 @@ if run_akq_game:
 
     #AKQGraph.graph_from_tree(akq_game.tree.get_root())
 
-    AKQGraph.create_graph_from_tree()
+    #AKQGraph.create_graph_from_tree()
 
-    AKQGraph.graph.render('data/img/test')
+    #AKQGraph.graph.render('data/img/test')
 
     print "Game set match "
