@@ -57,7 +57,7 @@ import random
 import numpy as np
 
 from RL.MCTS.Model import MCTS
-from RL.MCTS.Node import AKQNode
+from RL.MCTS.Node import AKQNode,InfoNode
 from RL.MCTS.Tree import Tree
 
 
@@ -161,11 +161,70 @@ class AKQGameState(object):
 
         self.game_tree = game_tree # the full game tree for for the information trees to reference
 
+    def deal_hand(self):
+
+        return random.choice(self.deck)
+
+    def expand_tree(self,current_player,info_state):
+
+        '''
+        Expands the info tree of the current player
+        :param current_player:
+        :param state:
+        :return:
+        '''
+        pass
+
+    def get_info_state(self, s):
+
+        '''
+
+        info state for the AKG game is (actions,hand)
+        actions are all previous actions to this node
+
+        For the AKQ I dont think we need to keep track of
+        actions so the info stat is only going to have
+        the additional hand value
+
+        Append
+        :param s:
+        :return:
+
+        '''
+
+
+
+        pass
+
+    def get_new_state(self,s,a):
+
+        node_children = s.children
+
+        for child in node_children:
+
+            if child.action == a:
+
+                return child
+
+            else:
+                continue
+
+        # we should not reach this line of code
+        # the function should always be able to return a new state
+
+        raise Exception("get_new_state was not able to find a child with the given action")
+
     def init_game(self):
 
         p1_tree = Tree() # info tree
 
+        chance_node = AKQNode(player="chance",pot=1)
+
+        p1_tree.set_root(chance_node)
+
         p2_tree = Tree() # info tree
+
+        p2_tree.set_root(self.game_tree.get_root())
 
         self.player1 = AKQPlayer(name="p1",info_tree=p1_tree)
 
@@ -180,21 +239,6 @@ class AKQGameState(object):
 
         pass
 
-    def get_info_state(self,s):
-
-        '''
-        info state for the AKG game is (actions,hand)
-        actions are all previous actions to this node
-        :param s:
-        :return:
-        '''
-
-        pass
-
-    def deal_hand(self):
-
-        return random.choice(self.deck)
-
     def search(self,game):
 
         '''
@@ -208,11 +252,31 @@ class AKQGameState(object):
         pass
 
     def rollout(self,s):
+
         '''
             takes in a state
             gets action based off of a rollout policy - i.e random actions, ect...
             new state s' from G(s,a) - transition simulator
             return simulate(s')
+        '''
+        pass
+
+    def rollout_policy(self,s):
+
+        '''
+
+        Get a new action for the player based off the rollout policy
+        :param s:
+        :return:
+
+        '''
+        pass
+
+    def select_uct(self,u_i):
+        '''
+            select action that maximizes
+            Q(u,a) + c sqrt( log(N(u))/N(u,a) )
+
         '''
         pass
 
@@ -251,25 +315,39 @@ class AKQGameState(object):
             return self.rollout(s)
 
 
-        infostate = self.get_info_state(s)
+        #infostate = self.get_info_state(s)
 
-        if infostate not in current_player.info_tree.__nodes:
+        NewInfoNode = InfoNode(s,current_player.current_hand)
 
-            self.expand_tree(current_player,infostate)
+        action = None
 
-            new_action = self.rollout(s)
+        if InfoNode not in current_player.info_tree.__nodes:
+
+            current_player.info_tree.add_node(NewInfoNode)
+
+            action = self.rollout_policy(s)
+
+
+        else:
+
+            action = self.select_uct(NewInfoNode)
+
+
+        next_state = self.get_new_state(s,action)
+
+        r = self.simulate(next_state)
+
+        self.update(NewInfoNode,action,r)
+
+        return r
 
 
 
 
-        pass
 
-    def select_uct(self,u_i):
-        '''
-            select action that maximizes
-            Q(u,a) + c sqrt( log(N(u))/N(u,a) )
 
-        '''
+
+
         pass
 
     def update(self,u_i, a, r):

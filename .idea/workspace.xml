@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RL/MCTS/AKQ.py" afterPath="$PROJECT_DIR$/RL/MCTS/AKQ.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RL/MCTS/Node.py" afterPath="$PROJECT_DIR$/RL/MCTS/Node.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RL/main_rl.py" afterPath="$PROJECT_DIR$/RL/main_rl.py" />
     </list>
     <ignored path="NeuralNetworks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,29 +23,37 @@
     <favorites_list name="NeuralNetworks" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.45784083">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="AKQ.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/RL/MCTS/AKQ.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="745">
-                  <caret line="259" column="40" selection-start-line="259" selection-start-column="40" selection-end-line="259" selection-end-column="40" />
+                <state relative-caret-position="316">
+                  <caret line="241" column="26" selection-start-line="241" selection-start-column="26" selection-end-line="241" selection-end-column="26" />
                   <folding>
                     <element signature="e#43#833#1" expanded="false" />
                     <element signature="e#835#848#0" expanded="true" />
-                    <element signature="e#1004#2477#0" expanded="false" />
-                    <element signature="e#1275#1507#0" expanded="false" />
-                    <element signature="e#1538#2179#0" expanded="false" />
-                    <element signature="e#2214#2332#0" expanded="false" />
-                    <element signature="e#2369#2477#0" expanded="false" />
-                    <element signature="e#2907#3090#0" expanded="false" />
-                    <element signature="e#3126#3318#0" expanded="false" />
-                    <element signature="e#3734#3765#0" expanded="false" />
-                    <element signature="e#3803#3978#0" expanded="false" />
-                    <element signature="e#4013#4245#0" expanded="false" />
-                    <element signature="e#5356#5474#0" expanded="false" />
-                    <element signature="e#5516#5624#0" expanded="false" />
+                    <element signature="e#1013#2486#0" expanded="false" />
+                    <element signature="e#1284#1516#0" expanded="false" />
+                    <element signature="e#1547#2188#0" expanded="false" />
+                    <element signature="e#2223#2341#0" expanded="false" />
+                    <element signature="e#2378#2486#0" expanded="false" />
+                    <element signature="e#2518#2682#0" expanded="false" />
+                    <element signature="e#2916#3099#0" expanded="false" />
+                    <element signature="e#3135#3166#0" expanded="false" />
+                    <element signature="e#3230#3380#0" expanded="false" />
+                    <element signature="e#3424#3764#0" expanded="false" />
+                    <element signature="e#3808#4189#0" expanded="false" />
+                    <element signature="e#4225#4563#0" expanded="false" />
+                    <element signature="e#4597#4728#0" expanded="false" />
+                    <element signature="e#4766#4941#0" expanded="false" />
+                    <element signature="e#4977#5209#0" expanded="false" />
+                    <element signature="e#5252#5386#0" expanded="false" />
+                    <element signature="e#5426#5544#0" expanded="false" />
+                    <element signature="e#5580#6931#0" expanded="false" />
+                    <element signature="e#6973#7081#0" expanded="false" />
+                    <element signature="e#7126#7555#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -55,8 +62,8 @@
           <file leaf-file-name="main_rl.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/RL/main_rl.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="410">
-                  <caret line="53" column="69" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
+                <state relative-caret-position="320">
+                  <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
                   <folding>
                     <element signature="e#40#75#0" expanded="true" />
                   </folding>
@@ -67,12 +74,11 @@
           <file leaf-file-name="Game.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/RL/MCTS/Game.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
+                <state relative-caret-position="25">
                   <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
                   <folding>
                     <element signature="e#618#702#0" expanded="false" />
                     <element signature="e#748#835#0" expanded="false" />
-                    <element signature="e#900#1403#0" expanded="false" />
                     <element signature="e#1452#1929#0" expanded="false" />
                     <element signature="e#1975#2090#0" expanded="false" />
                   </folding>
@@ -84,11 +90,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="Node.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Node.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/RL/MCTS/Node.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+                <state relative-caret-position="-65">
+                  <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
                   <folding>
                     <element signature="e#97#1004#0" expanded="false" />
                   </folding>
@@ -96,7 +102,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Tree.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Tree.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/RL/MCTS/Tree.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="405">
@@ -166,16 +172,15 @@
         <option value="$PROJECT_DIR$/RL/MCTS/Game.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/AKQ_old.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/Tree.py" />
-        <option value="$PROJECT_DIR$/RL/MCTS/Node.py" />
         <option value="$PROJECT_DIR$/RL/main_rl.py" />
+        <option value="$PROJECT_DIR$/RL/MCTS/Node.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/AKQ.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1440" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -628,14 +633,21 @@
       <option name="project" value="LOCAL" />
       <updated>1515181711612</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="I think i finally have extensive-form multi tree MCTS in my head correctly just started refactoring the code to fit my understanding">
+      <created>1515349405996</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1515349405996</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09952607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13178295" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -644,7 +656,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17524752" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.213253" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -698,7 +710,8 @@
     <MESSAGE value="Working on the rollout function for the AKQ game" />
     <MESSAGE value="Almost done with AKQ game just finished basic random rollout" />
     <MESSAGE value="adding a different AKQ game implementation that properly represents informatioin states" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding a different AKQ game implementation that properly represents informatioin states" />
+    <MESSAGE value="I think i finally have extensive-form multi tree MCTS in my head correctly just started refactoring the code to fit my understanding" />
+    <option name="LAST_COMMIT_MESSAGE" value="I think i finally have extensive-form multi tree MCTS in my head correctly just started refactoring the code to fit my understanding" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -724,7 +737,7 @@
           <option name="timeStamp" value="151" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="157" />
+      <option name="time" value="158" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1046,20 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RL/MCTS/Game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#618#702#0" expanded="false" />
-            <element signature="e#748#835#0" expanded="false" />
-            <element signature="e#900#1403#0" expanded="false" />
-            <element signature="e#1452#1929#0" expanded="false" />
-            <element signature="e#1975#2090#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RL/data/img/test.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1067,20 +1066,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RL/main_rl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="53" column="69" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
+        <state relative-caret-position="320">
+          <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
           <folding>
             <element signature="e#40#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RL/MCTS/Node.py">
+    <entry file="file://$PROJECT_DIR$/RL/MCTS/Game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+        <state relative-caret-position="25">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#97#1004#0" expanded="false" />
+            <element signature="e#618#702#0" expanded="false" />
+            <element signature="e#748#835#0" expanded="false" />
+            <element signature="e#1452#1929#0" expanded="false" />
+            <element signature="e#1975#2090#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1099,25 +1101,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RL/MCTS/Node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-65">
+          <caret line="76" column="8" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
+          <folding>
+            <element signature="e#97#1004#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RL/MCTS/AKQ.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="259" column="40" selection-start-line="259" selection-start-column="40" selection-end-line="259" selection-end-column="40" />
+        <state relative-caret-position="316">
+          <caret line="241" column="26" selection-start-line="241" selection-start-column="26" selection-end-line="241" selection-end-column="26" />
           <folding>
             <element signature="e#43#833#1" expanded="false" />
             <element signature="e#835#848#0" expanded="true" />
-            <element signature="e#1004#2477#0" expanded="false" />
-            <element signature="e#1275#1507#0" expanded="false" />
-            <element signature="e#1538#2179#0" expanded="false" />
-            <element signature="e#2214#2332#0" expanded="false" />
-            <element signature="e#2369#2477#0" expanded="false" />
-            <element signature="e#2907#3090#0" expanded="false" />
-            <element signature="e#3126#3318#0" expanded="false" />
-            <element signature="e#3734#3765#0" expanded="false" />
-            <element signature="e#3803#3978#0" expanded="false" />
-            <element signature="e#4013#4245#0" expanded="false" />
-            <element signature="e#5356#5474#0" expanded="false" />
-            <element signature="e#5516#5624#0" expanded="false" />
+            <element signature="e#1013#2486#0" expanded="false" />
+            <element signature="e#1284#1516#0" expanded="false" />
+            <element signature="e#1547#2188#0" expanded="false" />
+            <element signature="e#2223#2341#0" expanded="false" />
+            <element signature="e#2378#2486#0" expanded="false" />
+            <element signature="e#2518#2682#0" expanded="false" />
+            <element signature="e#2916#3099#0" expanded="false" />
+            <element signature="e#3135#3166#0" expanded="false" />
+            <element signature="e#3230#3380#0" expanded="false" />
+            <element signature="e#3424#3764#0" expanded="false" />
+            <element signature="e#3808#4189#0" expanded="false" />
+            <element signature="e#4225#4563#0" expanded="false" />
+            <element signature="e#4597#4728#0" expanded="false" />
+            <element signature="e#4766#4941#0" expanded="false" />
+            <element signature="e#4977#5209#0" expanded="false" />
+            <element signature="e#5252#5386#0" expanded="false" />
+            <element signature="e#5426#5544#0" expanded="false" />
+            <element signature="e#5580#6931#0" expanded="false" />
+            <element signature="e#6973#7081#0" expanded="false" />
+            <element signature="e#7126#7555#0" expanded="false" />
           </folding>
         </state>
       </provider>

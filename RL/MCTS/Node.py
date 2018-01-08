@@ -56,20 +56,19 @@ class InfoNode(object):
 
     '''
 
-    def __init__(self, player, pot, parent=None, action=None, node_index=None,
-                 is_leaf=False):
+    def __init__(self, node,player_hand):
 
-        self.node_index = node_index
+        self.node_index = None
 
-        self.player = player
+        self.player_hand = player_hand
 
-        self.pot = pot
+        self.pot = node.pot
 
-        self.action = action
+        self.action = node.action
 
         self.children = []
 
-        self.parent = parent
+        self.parent = node.parent
 
         self.visit_count = 0  # number of times the node has been visited in MCTS
 
@@ -77,7 +76,7 @@ class InfoNode(object):
 
         # self.current_ucb1 = 0 # average ev + 2 * sqrt ( ln (total iterations) / visit_count)
 
-        self.is_leaf = is_leaf
+        self.is_leaf = node.is_leaf
 
 
 class AKQNode(object):
