@@ -56,7 +56,7 @@
 import random
 import numpy as np
 
-from RL.MCTS.Model import MCTS
+#from RL.MCTS.Model import MCTS
 from RL.MCTS.Node import AKQNode,InfoNode
 from RL.MCTS.Tree import Tree
 
@@ -133,7 +133,7 @@ class ExtensiveFormMCTS(object):
 
 class AKQPlayer(object):
 
-    def __init__(self,name,info_tree):
+    def __init__(self,name,info_tree,starting_stack):
 
         self.name = name
 
@@ -143,8 +143,9 @@ class AKQPlayer(object):
 
         self.current_hand = None
 
-class AKQGameState(object):
+        self.starting_stack = starting_stack
 
+class AKQGameState(object):
     '''
     class used for simulating a simple AKQ poker game
     The game state needs to deal random cards to each player
@@ -157,23 +158,15 @@ class AKQGameState(object):
 
         self.player2 = None
 
-        self.deck = ['A','K','Q']
+        self.deck = [3,2,1]
 
         self.game_tree = game_tree # the full game tree for for the information trees to reference
+
+        self.init_game()
 
     def deal_hand(self):
 
         return random.choice(self.deck)
-
-    def expand_tree(self,current_player,info_state):
-
-        '''
-        Expands the info tree of the current player
-        :param current_player:
-        :param state:
-        :return:
-        '''
-        pass
 
     def get_info_state(self, s):
 
@@ -214,11 +207,21 @@ class AKQGameState(object):
 
         raise Exception("get_new_state was not able to find a child with the given action")
 
+    def get_child_info(self,u_i,a):
+
+        for child in u_i.children:
+            if u_i.action == a:
+                return child
+
+        # should not reach this location
+
+        raise Exception("g_child_info parent does not have child with action: " + str(a))
+
     def init_game(self):
 
         p1_tree = Tree() # info tree
 
-        chance_node = AKQNode(player="chance",pot=1)
+        chance_node = AKQNode(player="chance",pot=1,cip=0)
 
         p1_tree.set_root(chance_node)
 
@@ -226,30 +229,61 @@ class AKQGameState(object):
 
         p2_tree.set_root(self.game_tree.get_root())
 
-        self.player1 = AKQPlayer(name="p1",info_tree=p1_tree)
+        self.player1 = AKQPlayer(name="p1",info_tree=p1_tree,starting_stack=1)
 
-        self.player2 = AKQPlayer(name="p2",info_tree=p2_tree)
+        self.player2 = AKQPlayer(name="p2",info_tree=p2_tree,starting_stack=1)
 
     def reward(self,s):
+
         '''
+
         Takes in a leaf node and returns the reward to each player
         :param s:
         :return:
-        '''
-
-        pass
-
-    def search(self,game):
 
         '''
-            While within budget
-                Sample initial game state
-                simulate(s_o)
-            end
 
-            return policy
-        '''
-        pass
+        r = {"p1":0,"p2":0}
+
+        current_player = self.player1 if s.player == "p1" else self.player2
+
+        if s.action == "fold":
+            # the parent folded so the current player gets the pot
+            r[s.parent.player] = s.parent.cip
+
+            r[s.player] = s.pot + (current_player - s.cip)
+
+
+        elif s.action == "check":
+
+            # evaluate winner
+            if (self.player1.current_hand > self.player2.current_hand):
+                # p1 wins
+                r["p1"] = s.pot + (self.player1.starting_stack - s.cip)
+
+                r["p2"] = self.player2.starting_stack - s.cip
+
+            else:
+
+                r["p2"] = s.pot + (self.player2.starting_stack - s.cip)
+
+                r["p1"] = self.player1.starting_stack - s.cip
+
+
+        elif s.action == "call": # same as check?
+
+            # evaluate winner
+            if (self.player1.current_hand > self.player2.current_hand):
+                # p1 wins
+                r["p1"] = s.pot + (self.player1.starting_stack - s.cip)
+
+                r["p2"] = self.player2.starting_stack - s.cip
+
+            else:
+
+                r["p2"] = s.pot + (self.player2.starting_stack - s.cip)
+
+                r["p1"] = self.player1.starting_stack - s.cip
 
     def rollout(self,s):
 
@@ -259,7 +293,10 @@ class AKQGameState(object):
             new state s' from G(s,a) - transition simulator
             return simulate(s')
         '''
-        pass
+
+        new_state = self.rollout_policy(s)
+
+        return self.simulate(new_state) # recursive call
 
     def rollout_policy(self,s):
 
@@ -270,14 +307,45 @@ class AKQGameState(object):
         :return:
 
         '''
-        pass
+
+        # for now just going to use a random rollout policy
+
+        #possible_actions = [child.action for child in s.children]
+
+        # just return the child node
+
+        return random.choice(s.children)
 
     def select_uct(self,u_i):
+
         '''
             select action that maximizes
             Q(u,a) + c sqrt( log(N(u))/N(u,a) )
 
         '''
+
+        N_U = u_i.visit_count
+
+        possible_children = u_i.children
+
+        current_max_child = None
+
+        current_max = -1
+
+        for child in possible_children:
+
+            score = child.current_ev_value + 0.2*np.sqrt(np.log(N_U)/child.visit_count)
+
+            if score > current_max:
+
+                current_max = score
+
+                current_max_child = child
+
+        return current_max_child.action
+
+
+
         pass
 
     def simulate(self,s):
@@ -308,7 +376,7 @@ class AKQGameState(object):
             return self.reward(s)
 
 
-        current_player = s.player
+        current_player = self.player1 if s.player == "p1" else self.player2
 
         if current_player.out_of_tree == True:
 
@@ -317,11 +385,11 @@ class AKQGameState(object):
 
         #infostate = self.get_info_state(s)
 
-        NewInfoNode = InfoNode(s,current_player.current_hand)
+        NewInfoNode = InfoNode(current_player.current_hand)
 
         action = None
 
-        if InfoNode not in current_player.info_tree.__nodes:
+        if InfoNode not in current_player.info_tree.get_nodes():
 
             current_player.info_tree.add_node(NewInfoNode)
 
@@ -351,18 +419,26 @@ class AKQGameState(object):
         pass
 
     def update(self,u_i, a, r):
+
         '''
         N(u_i) += 1
         N(u,a) += 1
         Q(u,a) += (r - Q(u,a)) / N(u,a)
         '''
-        pass
+
+        u_i.visit_count += 1
+
+        child_node = self.get_child_info(u_i,a)
+
+        child_node.visit_count += 1
+
+        child_node.current_ev_value += (r - child_node.current_ev_value)/child_node.visit_count
 
     def run(self,num_iterations):
 
         for i in range(num_iterations):
 
-            self.deck = ['A','K','Q'] # reshuffle the cards yo
+            self.deck = [3,2,1] # reshuffle the cards yo
 
             # deals cards to each player
 

@@ -7,11 +7,11 @@ import graphviz as gv
 
 class Tree(object):
 
-    NodeIndex = 0 # name this node count?
-
     def __init__(self,nodes=[]):
 
         self.__nodes = nodes
+
+        self.node_index = 0
 
     def set_root(self,node):
 
@@ -21,7 +21,7 @@ class Tree(object):
         :return:
         '''
 
-        assert(Tree.NodeIndex == 0) # this method should only be used for setting initial root
+        assert(self.node_index == 0) # this method should only be used for setting initial root
 
         self.__nodes.insert(0,node)
 
@@ -35,9 +35,9 @@ class Tree(object):
         :return: None
         '''
 
-        Tree.NodeIndex += 1
+        self.node_index += 1
 
-        node.node_index = Tree.NodeIndex
+        node.node_index = self.node_index
 
         self.__nodes.append(node) # add the new node to the list of nodes on the tree
 

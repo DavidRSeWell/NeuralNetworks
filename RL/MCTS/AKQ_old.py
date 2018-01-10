@@ -175,7 +175,6 @@ class AkqMC(MCTS):
 
         pass
 
-
     def main(self, num_iterations):
         '''
                 main algorithm loop

@@ -47,7 +47,6 @@ class Node(object):
 
         self.is_leaf = is_leaf
 
-
 class InfoNode(object):
 
     '''
@@ -56,19 +55,19 @@ class InfoNode(object):
 
     '''
 
-    def __init__(self, node,player_hand):
+    def __init__(self, player_hand,pot,action,parent,cip,is_leaf=False):
 
         self.node_index = None
 
         self.player_hand = player_hand
 
-        self.pot = node.pot
+        self.pot = pot
 
-        self.action = node.action
+        self.action = action
 
         self.children = []
 
-        self.parent = node.parent
+        self.parent = parent
 
         self.visit_count = 0  # number of times the node has been visited in MCTS
 
@@ -76,8 +75,9 @@ class InfoNode(object):
 
         # self.current_ucb1 = 0 # average ev + 2 * sqrt ( ln (total iterations) / visit_count)
 
-        self.is_leaf = node.is_leaf
+        self.is_leaf = is_leaf
 
+        self.cip = cip # the number of cip for the player that owns the node
 
 class AKQNode(object):
     '''
@@ -94,7 +94,7 @@ class AKQNode(object):
         '''
 
     def __init__(self, player, pot, parent=None, action=None, node_index=None,
-                 is_leaf=False):
+                 is_leaf=False,cip=0):
 
         self.node_index = node_index
 
@@ -112,6 +112,8 @@ class AKQNode(object):
 
         self.current_ev_value = 0  # total value of node for current player, not used in extensive form games
 
-        # self.current_ucb1 = 0 # average ev + 2 * sqrt ( ln (total iterations) / visit_count)
+        #self.current_ucb1 = 0 # average ev + 2 * sqrt ( ln (total iterations) / visit_count)
 
         self.is_leaf = is_leaf
+
+        self.cip = cip

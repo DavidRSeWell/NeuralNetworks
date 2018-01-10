@@ -3,7 +3,9 @@ module for running RL programs
 '''
 
 from RL.MCTS import Game,Tree,Graph
+from RL.MCTS.AKQ import  AKQGameState
 import graphviz as gv
+
 
 run_akq_game = 1
 if run_akq_game:
@@ -63,7 +65,11 @@ if run_akq_game:
     akq_game.new_action(current_index=5,player="p2",action={"call":1})
     akq_game.new_action(current_index=5,player="p2",action={"fold":0})
 
-    new_graph = gv.Digraph(format="png")
+    GameState = AKQGameState(tree)
+
+    GameState.run(100)
+
+    #new_graph = gv.Digraph(format="png")
 
 
     #AKQGraph = Graph.TreeGraph(tree=akq_game.tree,graph=new_graph)
