@@ -185,6 +185,10 @@ class AKQGameState(object):
 
         '''
 
+        if s.player == "chance" or s.parent == None:
+            # the node is a change node
+            pass
+
 
 
         pass
@@ -385,7 +389,8 @@ class AKQGameState(object):
 
         #infostate = self.get_info_state(s)
 
-        NewInfoNode = InfoNode(current_player.current_hand)
+        NewInfoNode = InfoNode(current_player.current_hand,pot=s.pot,action=s.action,parent=s.parent,
+                               cip=s.cip)
 
         action = None
 

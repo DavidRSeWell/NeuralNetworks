@@ -5,11 +5,17 @@
 import graphviz as gv
 
 
-class Tree(object):
+class Tree:
 
-    def __init__(self,nodes=[]):
+    tree_index = 0
 
-        self.__nodes = nodes
+    def __init__(self):
+
+        Tree.tree_index += 1
+
+        self.my_tree_index = Tree.tree_index
+
+        self.nodes = []
 
         self.node_index = 0
 
@@ -23,7 +29,7 @@ class Tree(object):
 
         assert(self.node_index == 0) # this method should only be used for setting initial root
 
-        self.__nodes.insert(0,node)
+        self.nodes.insert(0,node)
 
     def add_node(self,node):
 
@@ -39,21 +45,21 @@ class Tree(object):
 
         node.node_index = self.node_index
 
-        self.__nodes.append(node) # add the new node to the list of nodes on the tree
+        self.nodes.append(node) # add the new node to the list of nodes on the tree
 
         node.parent.children.append(node) # add the node to parents list of children
 
     def get_root(self):
 
-        return self.__nodes[0]
+        return self.nodes[0]
 
     def get_node(self,index):
 
-        return self.__nodes[index]
+        return self.nodes[index]
 
     def get_nodes(self):
 
-        return self.__nodes
+        return self.nodes
 
 
 

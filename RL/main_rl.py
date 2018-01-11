@@ -4,6 +4,7 @@ module for running RL programs
 
 from RL.MCTS import Game,Tree,Graph
 from RL.MCTS.AKQ import  AKQGameState
+from RL.MCTS.Node import Node
 import graphviz as gv
 
 
@@ -66,6 +67,8 @@ if run_akq_game:
     akq_game.new_action(current_index=5,player="p2",action={"fold":0})
 
     GameState = AKQGameState(tree)
+
+
 
     GameState.run(100)
 
