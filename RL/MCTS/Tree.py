@@ -61,6 +61,39 @@ class Tree:
 
         return self.nodes
 
+    def get_tree_node(self,node):
+
+        '''
+            get node from outside of tree and returns node
+            from current tree that has the same attributes
+        '''
+
+        for tree_node in self.nodes:
+
+            if node.__dict__ == tree_node.__dict__:
+                return tree_node
+
+        return None
+
+    def node_in_tree(self,node):
+
+        '''
+        checks to see if a node is already contained in the tree
+        loop over each node in tree and checks if attributes are the same
+        :param node:
+        :return:
+        '''
+
+        for tree_node in self.nodes:
+
+            if node.__dict__ == tree_node.__dict__:
+                return True
+
+
+        return False
+
+
+
 
 
 

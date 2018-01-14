@@ -30,13 +30,13 @@ class TreeGraph(object):
 
         if tree.node_index == 0:
 
-            label = tree.player + ' \\n ' + 'Pot: ' + str(tree.pot)
+            label = tree.player + ' \\n ' + 'Pot: ' + str(tree.p1_cip + tree.p2_cip)
 
             self.graph.node(str(tree.node_index),label)
 
             for child in tree.children:
 
-                label = tree.player + ' \\n ' + 'Pot: ' + str(tree.pot)
+                label = tree.player + ' \\n ' + 'Pot: ' + str(tree.p1_cip + tree.p2_cip)
 
                 self.graph.node(str(child.node_index),label)
 
@@ -51,7 +51,7 @@ class TreeGraph(object):
 
             if (len(tree.children) == 0):
 
-                label = tree.player + ' \\n ' + 'Pot: ' + str(tree.pot)
+                label = tree.player + ' \\n ' + 'Pot: ' + str(tree.p1_cip + tree.p2_cip)
 
                 self.graph.node(str(tree.node_index), label)
 
@@ -61,7 +61,7 @@ class TreeGraph(object):
 
                 for child in tree.children:
 
-                    label = tree.player + ' \\n ' + 'Pot: ' + str(tree.pot)
+                    label = tree.player + ' \\n ' + 'Pot: ' + str(tree.p1_cip + tree.p2_cip)
 
                     self.graph.node(str(child.node_index),label)
 

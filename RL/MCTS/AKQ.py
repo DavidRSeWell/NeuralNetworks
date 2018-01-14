@@ -139,6 +139,8 @@ class AKQPlayer(object):
 
         self.info_tree = info_tree
 
+        self.policy = {}
+
         self.out_of_tree = False
 
         self.current_hand = None
@@ -168,7 +170,31 @@ class AKQGameState(object):
 
         return random.choice(self.deck)
 
-    def get_info_state(self, s):
+    def get_hero_villian(self,current_player):
+
+        '''
+        Take in the name of the owner of the current node and returns hero,villian
+        :param current_player:
+        :return: []
+        '''
+
+        if current_player == "p1":
+
+            return [self.player1,self.player2]
+
+        else:
+
+            return [self.player2,self.player1]
+
+    def get_hero_villian_cip(self,s):
+
+        if s.player == "p1":
+            return [s.p1_cip,s.p2_cip]
+
+        if s.player == "p2":
+            return [s.p2_cip,s.p1_cip]
+
+    def get_info_state(self,current_player, s):
 
         '''
 
@@ -185,13 +211,18 @@ class AKQGameState(object):
 
         '''
 
-        if s.player == "chance" or s.parent == None:
-            # the node is a change node
-            pass
+        if s.parent == None:
+            # this is a root node and the parent will be chance
 
+            NewInfoNode = InfoNode(current_player.current_hand, action=s.action, parent=current_player.info_tree.get_root(),
+                                   p1_cip=s.p1_cip, p2_cip=s.p2_cip,is_leaf=s.is_leaf)
 
+            return NewInfoNode
 
-        pass
+        NewInfoNode = InfoNode(current_player.current_hand, action=s.action, parent=s.parent,
+                               p1_cip=s.p1_cip, p2_cip=s.p2_cip,is_leaf=s.is_leaf)
+
+        return NewInfoNode
 
     def get_new_state(self,s,a):
 
@@ -225,7 +256,7 @@ class AKQGameState(object):
 
         p1_tree = Tree() # info tree
 
-        chance_node = AKQNode(player="chance",pot=1,cip=0)
+        chance_node = AKQNode(player="chance",p1_cip=0.5,p2_cip=0.5)
 
         p1_tree.set_root(chance_node)
 
@@ -236,6 +267,10 @@ class AKQGameState(object):
         self.player1 = AKQPlayer(name="p1",info_tree=p1_tree,starting_stack=1)
 
         self.player2 = AKQPlayer(name="p2",info_tree=p2_tree,starting_stack=1)
+
+        self.player1.policy[0] = {}
+
+        self.player2.policy[0] = {}
 
     def reward(self,s):
 
@@ -249,45 +284,53 @@ class AKQGameState(object):
 
         r = {"p1":0,"p2":0}
 
-        current_player = self.player1 if s.player == "p1" else self.player2
+        hero, villian = self.get_hero_villian(s.player)
 
-        if s.action == "fold":
+        hero_cip ,villian_cip = self.get_hero_villian_cip(s)
+
+        current_pot = s.p1_cip + s.p2_cip
+
+        action_type = s.action.keys()[0]
+
+        if action_type == "fold":
             # the parent folded so the current player gets the pot
-            r[s.parent.player] = s.parent.cip
+            r[villian.name] = villian.starting_stack - villian_cip
 
-            r[s.player] = s.pot + (current_player - s.cip)
+            r[s.player] = current_pot + (hero.starting_stack - hero_cip)
 
 
-        elif s.action == "check":
+        elif action_type == "check":
 
             # evaluate winner
-            if (self.player1.current_hand > self.player2.current_hand):
+            if (hero.current_hand > villian.current_hand):
                 # p1 wins
-                r["p1"] = s.pot + (self.player1.starting_stack - s.cip)
+                r[hero.name] = current_pot + (hero.starting_stack - hero_cip)
 
-                r["p2"] = self.player2.starting_stack - s.cip
+                r[villian.name] = villian.starting_stack - villian_cip
 
             else:
 
-                r["p2"] = s.pot + (self.player2.starting_stack - s.cip)
+                r[villian.name] = current_pot + (villian.starting_stack - villian_cip)
 
-                r["p1"] = self.player1.starting_stack - s.cip
+                r[hero.name] = hero.starting_stack - hero_cip
 
 
-        elif s.action == "call": # same as check?
+        elif action_type == "call": # same as check?
 
             # evaluate winner
-            if (self.player1.current_hand > self.player2.current_hand):
+            if (hero.current_hand > villian.current_hand):
                 # p1 wins
-                r["p1"] = s.pot + (self.player1.starting_stack - s.cip)
+                r[hero.name] = current_pot + (hero.starting_stack - hero_cip)
 
-                r["p2"] = self.player2.starting_stack - s.cip
+                r[villian.name] = villian.starting_stack - villian_cip
 
             else:
 
-                r["p2"] = s.pot + (self.player2.starting_stack - s.cip)
+                r[villian.name] = current_pot + (villian.starting_stack - villian_cip)
 
-                r["p1"] = self.player1.starting_stack - s.cip
+                r[hero.name] = hero.starting_stack - hero_cip
+
+        return r
 
     def rollout(self,s):
 
@@ -298,7 +341,9 @@ class AKQGameState(object):
             return simulate(s')
         '''
 
-        new_state = self.rollout_policy(s)
+        new_action = self.rollout_policy(s)
+
+        new_state = self.get_new_state(s,new_action)
 
         return self.simulate(new_state) # recursive call
 
@@ -318,7 +363,12 @@ class AKQGameState(object):
 
         # just return the child node
 
-        return random.choice(s.children)
+        try:
+
+            return random.choice(s.children).action
+
+        except Exception,e:
+            print "Error at rollout_policy: " + str(e)
 
     def select_uct(self,u_i):
 
@@ -347,10 +397,6 @@ class AKQGameState(object):
                 current_max_child = child
 
         return current_max_child.action
-
-
-
-        pass
 
     def simulate(self,s):
         '''
@@ -387,30 +433,39 @@ class AKQGameState(object):
             return self.rollout(s)
 
 
-        #infostate = self.get_info_state(s)
-
-        NewInfoNode = InfoNode(current_player.current_hand,pot=s.pot,action=s.action,parent=s.parent,
-                               cip=s.cip)
+        infostate = self.get_info_state(current_player,s)
 
         action = None
 
-        if InfoNode not in current_player.info_tree.get_nodes():
+        if not current_player.info_tree.node_in_tree(infostate):
 
-            current_player.info_tree.add_node(NewInfoNode)
+            current_player.info_tree.add_node(infostate)
 
             action = self.rollout_policy(s)
+
+            current_player.out_of_tree = True
+
+            current_player.policy[infostate.node_index] = {}
+
+            current_player.policy[infostate.node_index][action.keys()[0]] = {}
+
+            current_player.policy[infostate.node_index][action.keys()[0]]['count'] = 0
+
+            current_player.policy[infostate.node_index][action.keys()[0]]['ev'] = 0
 
 
         else:
 
-            action = self.select_uct(NewInfoNode)
+            infostate = current_player.info_tree.get_tree_node(infostate)
+
+            action = self.select_uct(infostate)
 
 
         next_state = self.get_new_state(s,action)
 
         r = self.simulate(next_state)
 
-        self.update(NewInfoNode,action,r)
+        self.update(current_player,infostate,action,r)
 
         return r
 
@@ -423,7 +478,7 @@ class AKQGameState(object):
 
         pass
 
-    def update(self,u_i, a, r):
+    def update(self,current_player,u_i, a, r):
 
         '''
         N(u_i) += 1
@@ -433,11 +488,18 @@ class AKQGameState(object):
 
         u_i.visit_count += 1
 
-        child_node = self.get_child_info(u_i,a)
+        player_reward = r[current_player.name]
 
-        child_node.visit_count += 1
 
-        child_node.current_ev_value += (r - child_node.current_ev_value)/child_node.visit_count
+        current_player.policy[u_i.node_index][a.keys()[0]]['count'] += 1
+
+        current_count = current_player.policy[u_i.node_index][a.keys()[0]]['count']
+
+        current_ev = current_player.policy[u_i.node_index][a.keys()[0]]['ev']
+
+        update = (player_reward - current_ev)/current_count
+
+        current_player.policy[u_i.node_index][a.keys()[0]]['ev'] += update
 
     def run(self,num_iterations):
 
@@ -460,6 +522,9 @@ class AKQGameState(object):
             s0 = self.game_tree.get_root()
 
             self.simulate(s0)
+
+
+        return [self.player1.policy,self.player2.policy]
 
 
 

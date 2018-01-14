@@ -46,11 +46,12 @@ if run_akq_game:
 
     players = ["p1","p2"]
 
-    init_pot = 1
+    init_p1_cip = 0.5
+    init_p2_cip = 0.5
 
     akq_game = Game.GameState(tree=tree,players=players,name='akq_game')
 
-    akq_game.set_root(players[0],init_pot)
+    akq_game.set_root(players[0],init_p1_cip,init_p2_cip)
 
     root = akq_game.tree.get_root()
 
@@ -66,11 +67,12 @@ if run_akq_game:
     akq_game.new_action(current_index=5,player="p2",action={"call":1})
     akq_game.new_action(current_index=5,player="p2",action={"fold":0})
 
+
     GameState = AKQGameState(tree)
 
 
 
-    GameState.run(100)
+    p1_policy , p2_policy = GameState.run(100)
 
     #new_graph = gv.Digraph(format="png")
 

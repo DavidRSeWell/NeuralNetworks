@@ -20,14 +20,12 @@ class Node(object):
 
     '''
 
-    def __init__(self,player,pot,parent=None,action=None,node_index=None,
-                 is_leaf=False,range1={},range2={}):
+    def __init__(self,player,parent=None,action=None,node_index=None,
+                 is_leaf=False,range1={},range2={},p1_cip=None,p2_cip=None):
 
         self.node_index = node_index
 
         self.player = player
-
-        self.pot = pot
 
         self.action = action
 
@@ -47,6 +45,11 @@ class Node(object):
 
         self.is_leaf = is_leaf
 
+        self.p1_cip = p1_cip
+
+        self.p2_cip = p2_cip
+
+
 class InfoNode(object):
 
     '''
@@ -55,13 +58,11 @@ class InfoNode(object):
 
     '''
 
-    def __init__(self, player_hand,pot,action,parent,cip,is_leaf=False):
+    def __init__(self, player_hand,action,parent,p1_cip,p2_cip,is_leaf=False):
 
         self.node_index = None
 
         self.player_hand = player_hand
-
-        self.pot = pot
 
         self.action = action
 
@@ -77,7 +78,9 @@ class InfoNode(object):
 
         self.is_leaf = is_leaf
 
-        self.cip = cip # the number of cip for the player that owns the node
+        self.p1_cip = p1_cip # the number of cip for p1
+
+        self.p2_cip = p2_cip # the number of cip for p2
 
 class AKQNode(object):
     '''
@@ -93,14 +96,12 @@ class AKQNode(object):
 
         '''
 
-    def __init__(self, player, pot, parent=None, action=None, node_index=None,
-                 is_leaf=False,cip=0):
+    def __init__(self, player, parent=None, action=None, node_index=None,
+                 is_leaf=False,p1_cip=None,p2_cip=None):
 
         self.node_index = node_index
 
         self.player = player
-
-        self.pot = pot
 
         self.action = action
 
@@ -116,4 +117,6 @@ class AKQNode(object):
 
         self.is_leaf = is_leaf
 
-        self.cip = cip
+        self.p1_cip = p1_cip
+
+        self.p2_cip = p2_cip
