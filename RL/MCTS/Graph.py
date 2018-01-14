@@ -83,13 +83,13 @@ class TreeGraph(object):
 
         for node in tree_nodes:
 
-            label = node.player + ' \\n ' + 'Pot: ' + str(node.pot)
+            label = node.player + ' \\n ' + 'Pot: ' + str(node.p1_cip + node.p2_cip)
 
             self.graph.node(str(node.node_index),label)
 
             for child in node.children:
 
-                label = child.player + ' \\n ' + 'Pot: ' + str(child.pot)
+                label = child.player + ' \\n ' + 'Pot: ' + str(node.p1_cip + node.p2_cip)
 
                 self.graph.node(str(child.node_index),label)
 

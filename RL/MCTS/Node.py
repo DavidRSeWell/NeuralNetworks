@@ -97,7 +97,7 @@ class AKQNode(object):
         '''
 
     def __init__(self, player, parent=None, action=None, node_index=None,
-                 is_leaf=False,p1_cip=None,p2_cip=None):
+                 is_leaf=False,p1_cip=None,p2_cip=None,player_hand=None):
 
         self.node_index = node_index
 
@@ -120,3 +120,5 @@ class AKQNode(object):
         self.p1_cip = p1_cip
 
         self.p2_cip = p2_cip
+
+        self.player_hand = None

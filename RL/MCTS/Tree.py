@@ -68,12 +68,23 @@ class Tree:
             from current tree that has the same attributes
         '''
 
+        node_main_info = [node.p1_cip, node.p2_cip, node.action, node.player_hand,node.parent]
+
         for tree_node in self.nodes:
 
-            if node.__dict__ == tree_node.__dict__:
-                return tree_node
+            try:
 
-        return None
+                tree_node_info = [tree_node.p1_cip, tree_node.p2_cip, tree_node.action, tree_node.player_hand,tree_node.parent]
+
+                if tree_node_info == node_main_info:
+
+                    return tree_node
+
+            except Exception, e:
+                print "Except in get_tree_node: " + str(e)
+                continue
+
+        return False
 
     def node_in_tree(self,node):
 
@@ -84,10 +95,21 @@ class Tree:
         :return:
         '''
 
+        node_main_info = [node.p1_cip,node.p2_cip,node.action,node.player_hand,node.parent]
+
         for tree_node in self.nodes:
 
-            if node.__dict__ == tree_node.__dict__:
-                return True
+            try:
+
+                tree_node_info = [tree_node.p1_cip,tree_node.p2_cip,tree_node.action,tree_node.player_hand,tree_node.parent]
+
+                if tree_node_info == node_main_info:
+
+                    return True
+
+            except Exception,e:
+                print "Except in node_in_tree: " + str(e)
+                continue
 
 
         return False

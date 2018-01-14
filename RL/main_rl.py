@@ -64,8 +64,8 @@ if run_akq_game:
     akq_game.new_action(current_index=2,player="p2",action={"bet":1})
     akq_game.new_action(current_index=2,player="p2",action={"check":0})
 
-    akq_game.new_action(current_index=5,player="p2",action={"call":1})
-    akq_game.new_action(current_index=5,player="p2",action={"fold":0})
+    akq_game.new_action(current_index=5,player="p1",action={"call":1})
+    akq_game.new_action(current_index=5,player="p1",action={"fold":0})
 
 
     GameState = AKQGameState(tree)
@@ -74,18 +74,10 @@ if run_akq_game:
 
     p1_policy , p2_policy = GameState.run(100)
 
-    #new_graph = gv.Digraph(format="png")
+#    new_graph = gv.Digraph(format="png")
 
 
-    #AKQGraph = Graph.TreeGraph(tree=akq_game.tree,graph=new_graph)
-
-    #label = tree.player + ' \\n ' + 'Pot: ' + str(tree.pot)
-
-    #self.graph.node(str(tree.node_index), label)
-
-    #AKQGraph.graph.node
-
-    #AKQGraph.graph_from_tree(akq_game.tree.get_root())
+#    AKQGraph = Graph.TreeGraph(tree=akq_game.tree,graph=new_graph)
 
     #AKQGraph.create_graph_from_tree()
 

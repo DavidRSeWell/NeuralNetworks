@@ -396,6 +396,10 @@ class AKQGameState(object):
 
                 current_max_child = child
 
+
+        if current_max_child == None:
+            print "fml"
+
         return current_max_child.action
 
     def simulate(self,s):
@@ -469,15 +473,6 @@ class AKQGameState(object):
 
         return r
 
-
-
-
-
-
-
-
-        pass
-
     def update(self,current_player,u_i, a, r):
 
         '''
@@ -506,6 +501,10 @@ class AKQGameState(object):
         for i in range(num_iterations):
 
             self.deck = [3,2,1] # reshuffle the cards yo
+
+            self.player1.out_of_tree = False
+
+            self.player2.out_of_tree = False
 
             # deals cards to each player
 
