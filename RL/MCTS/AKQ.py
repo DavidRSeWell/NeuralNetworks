@@ -214,12 +214,12 @@ class AKQGameState(object):
         if s.parent == None:
             # this is a root node and the parent will be chance
 
-            NewInfoNode = InfoNode(current_player.current_hand, action=s.action, parent=current_player.info_tree.get_root(),
+            NewInfoNode = InfoNode(current_player.current_hand, player=s.player,action=s.action, parent=current_player.info_tree.get_root(),
                                    p1_cip=s.p1_cip, p2_cip=s.p2_cip,is_leaf=s.is_leaf)
 
             return NewInfoNode
 
-        NewInfoNode = InfoNode(current_player.current_hand, action=s.action, parent=s.parent,
+        NewInfoNode = InfoNode(current_player.current_hand,player=s.player ,action=s.action, parent=s.parent,
                                p1_cip=s.p1_cip, p2_cip=s.p2_cip,is_leaf=s.is_leaf)
 
         return NewInfoNode
@@ -256,7 +256,7 @@ class AKQGameState(object):
 
         p1_tree = Tree() # info tree
 
-        chance_node = AKQNode(player="chance",p1_cip=0.5,p2_cip=0.5)
+        chance_node = AKQNode(player="chance",p1_cip=0.0,p2_cip=0.0)
 
         p1_tree.set_root(chance_node)
 
@@ -288,7 +288,7 @@ class AKQGameState(object):
 
         hero_cip ,villian_cip = self.get_hero_villian_cip(s)
 
-        current_pot = s.p1_cip + s.p2_cip
+        current_pot = 1.0 + s.p1_cip + s.p2_cip
 
         action_type = s.action.keys()[0]
 
@@ -380,27 +380,33 @@ class AKQGameState(object):
 
         N_U = u_i.visit_count
 
-        possible_children = u_i.children
-
-        current_max_child = None
+        current_max_action = None
 
         current_max = -1
 
-        for child in possible_children:
+        current_player = self.player1 if u_i.player == "p1" else self.player2
 
-            score = child.current_ev_value + 0.2*np.sqrt(np.log(N_U)/child.visit_count)
+        info_policy = current_player.policy[u_i.node_index]
+
+        for action in info_policy.keys():
+
+            child_ev_value = info_policy[action]['ev']
+
+            child_visit_count = info_policy[action]['count']
+
+            score = child_ev_value + 50*np.sqrt(np.log(N_U)/child_visit_count)
 
             if score > current_max:
 
                 current_max = score
 
-                current_max_child = child
+                current_max_action = action
 
 
-        if current_max_child == None:
-            print "fml"
-
-        return current_max_child.action
+        if current_max_action == "check" or current_max_action == "fold":
+            return {current_max_action:0}
+        else:
+            return {current_max_action:1}
 
     def simulate(self,s):
         '''
@@ -451,11 +457,15 @@ class AKQGameState(object):
 
             current_player.policy[infostate.node_index] = {}
 
-            current_player.policy[infostate.node_index][action.keys()[0]] = {}
+            for child in s.children:
 
-            current_player.policy[infostate.node_index][action.keys()[0]]['count'] = 0
+                new_action = child.action.keys()[0]
 
-            current_player.policy[infostate.node_index][action.keys()[0]]['ev'] = 0
+                current_player.policy[infostate.node_index][new_action] = {}
+
+                current_player.policy[infostate.node_index][new_action]['count'] = 0
+
+                current_player.policy[infostate.node_index][new_action]['ev'] = 0
 
 
         else:
@@ -463,6 +473,7 @@ class AKQGameState(object):
             infostate = current_player.info_tree.get_tree_node(infostate)
 
             action = self.select_uct(infostate)
+
 
 
         next_state = self.get_new_state(s,action)

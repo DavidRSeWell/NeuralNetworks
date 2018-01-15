@@ -58,11 +58,13 @@ class InfoNode(object):
 
     '''
 
-    def __init__(self, player_hand,action,parent,p1_cip,p2_cip,is_leaf=False):
+    def __init__(self, player_hand,player,action,parent,p1_cip,p2_cip,is_leaf=False):
 
         self.node_index = None
 
         self.player_hand = player_hand
+
+        self.player = player
 
         self.action = action
 

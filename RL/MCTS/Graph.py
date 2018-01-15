@@ -95,6 +95,35 @@ class TreeGraph(object):
 
                 self.graph.edge(str(node.node_index),str(child.node_index), str(child.action.keys()[0]))
 
+    def create_graph_from_info_tree(self,info_tree):
+
+        '''
+
+            Takes the current tree representation of a tree and
+            converts it to a graphiz graph
+
+            :return:
+        '''
+
+        info_tree_nodes = info_tree.get_nodes()
+
+        for node in info_tree_nodes:
+
+            label = node.player + ' \\n ' + 'Pot: ' + str(node.p1_cip + node.p2_cip)
+
+            if node.player != 'chance':
+
+                label += 'Hand: ' + node.player_hand
+
+            self.graph.node(str(node.node_index), label)
+
+            for child in node.children:
+                label = child.player + ' \\n ' + 'Pot: ' + str(node.p1_cip + node.p2_cip)
+
+                self.graph.node(str(child.node_index), label)
+
+                self.graph.edge(str(node.node_index), str(child.node_index), str(child.action.keys()[0]))
+
     def add_nodes(self,graph, nodes):
 
         for n in nodes:

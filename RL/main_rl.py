@@ -6,6 +6,7 @@ from RL.MCTS import Game,Tree,Graph
 from RL.MCTS.AKQ import  AKQGameState
 from RL.MCTS.Node import Node
 import graphviz as gv
+import pandas as pd
 
 
 run_akq_game = 1
@@ -46,8 +47,8 @@ if run_akq_game:
 
     players = ["p1","p2"]
 
-    init_p1_cip = 0.5
-    init_p2_cip = 0.5
+    init_p1_cip = 0.0
+    init_p2_cip = 0.0
 
     akq_game = Game.GameState(tree=tree,players=players,name='akq_game')
 
@@ -72,7 +73,7 @@ if run_akq_game:
 
 
 
-    p1_policy , p2_policy = GameState.run(100)
+    p1_policy , p2_policy = GameState.run(100000 )
 
 #    new_graph = gv.Digraph(format="png")
 
@@ -83,4 +84,47 @@ if run_akq_game:
 
     #AKQGraph.graph.render('data/img/test')
 
-    print "Game set match "
+
+    p1_ev_matrix = []
+
+    for node in GameState.player1.info_tree.nodes:
+
+        if node.player == "chance":
+            continue
+
+        current_hand = node.player_hand
+
+        policy = p1_policy[node.node_index]
+
+        for action in policy.keys():
+
+            ev = policy[action]['ev']
+
+            p1_ev_matrix.append(['player 1', 'node: ' + str(node.node_index), 'hand:' + str(current_hand) , action , 'value: ' + str(ev)])
+
+
+
+    ev_df_1 = pd.DataFrame(p1_ev_matrix)
+
+    p2_ev_matrix = []
+
+    for node in GameState.player2.info_tree.nodes:
+
+        if node.player != "p2":
+            continue
+
+        current_hand = node.player_hand
+
+        policy = p2_policy[node.node_index]
+
+        for action in policy.keys():
+            ev = policy[action]['ev']
+
+            p2_ev_matrix.append(
+                ['player 2', 'node: ' + str(node.node_index), 'hand:' + str(current_hand), action, 'value: ' + str(ev)])
+
+    ev_df_2 = pd.DataFrame(p2_ev_matrix)
+
+
+    print "donezo"
+

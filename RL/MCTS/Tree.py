@@ -81,7 +81,7 @@ class Tree:
                     return tree_node
 
             except Exception, e:
-                print "Except in get_tree_node: " + str(e)
+                #print "Except in get_tree_node: " + str(e)
                 continue
 
         return False
@@ -108,7 +108,7 @@ class Tree:
                     return True
 
             except Exception,e:
-                print "Except in node_in_tree: " + str(e)
+                #print "Except in node_in_tree: " + str(e)
                 continue
 
 

@@ -27,24 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Node.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RL/MCTS/Node.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="66" column="15" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="15" />
-              <folding>
-                <element signature="e#97#1060#0" expanded="false" />
-                <element signature="e#1823#2768#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AKQ.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AKQ.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RL/MCTS/AKQ.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="378" column="11" selection-start-line="378" selection-start-column="11" selection-end-line="378" selection-end-column="11" />
+            <state relative-caret-position="236">
+              <caret line="463" column="48" selection-start-line="463" selection-start-column="48" selection-end-line="463" selection-end-column="48" />
               <folding>
                 <element signature="e#43#833#1" expanded="false" />
                 <element signature="e#835#848#0" expanded="true" />
@@ -53,62 +40,56 @@
                 <element signature="e#1548#2189#0" expanded="false" />
                 <element signature="e#2224#2342#0" expanded="false" />
                 <element signature="e#2379#2487#0" expanded="false" />
+                <element signature="e#2519#2770#0" expanded="false" />
                 <element signature="e#3003#3206#0" expanded="false" />
                 <element signature="e#3242#3273#0" expanded="false" />
                 <element signature="e#3331#3627#0" expanded="false" />
                 <element signature="e#3676#3804#0" expanded="false" />
-                <element signature="e#3863#4732#0" expanded="false" />
-                <element signature="e#4776#5157#0" expanded="false" />
-                <element signature="e#5204#5424#0" expanded="false" />
-                <element signature="e#5460#5922#0" expanded="false" />
-                <element signature="e#5957#7536#0" expanded="false" />
-                <element signature="e#7572#7948#0" expanded="false" />
-                <element signature="e#7991#8430#0" expanded="false" />
-                <element signature="e#10928#11477#0" expanded="false" />
-                <element signature="e#11522#12096#0" expanded="false" />
+                <element signature="e#3863#4764#0" expanded="false" />
+                <element signature="e#4808#5189#0" expanded="false" />
+                <element signature="e#5236#5456#0" expanded="false" />
+                <element signature="e#5492#5954#0" expanded="false" />
+                <element signature="e#5989#7574#0" expanded="false" />
+                <element signature="e#7610#7986#0" expanded="false" />
+                <element signature="e#8029#8468#0" expanded="false" />
+                <element signature="e#11333#11882#0" expanded="false" />
+                <element signature="e#11927#12501#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RL/MCTS/Model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-              <folding>
-                <element signature="e#228#351#0" expanded="false" />
-                <element signature="e#409#619#0" expanded="false" />
-                <element signature="e#684#688#0" expanded="false" />
-                <element signature="e#754#758#0" expanded="false" />
-              </folding>
-            </state>
+      <file leaf-file-name="test.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RL/data/img/test.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RL/MCTS/Tree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="110" column="45" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
-              <folding>
-                <element signature="e#316#584#0" expanded="false" />
-                <element signature="e#624#1034#0" expanded="false" />
-                <element signature="e#1069#1089#0" expanded="false" />
-                <element signature="e#1130#1154#0" expanded="false" />
-                <element signature="e#1190#1207#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_rl.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main_rl.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RL/main_rl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
+            <state relative-caret-position="205">
+              <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
               <folding>
                 <element signature="e#40#75#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Graph.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RL/MCTS/Graph.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="97" column="52" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
+              <folding>
+                <element signature="e#237#281#0" expanded="false" />
+                <element signature="e#329#1826#0" expanded="false" />
+                <element signature="e#1875#2536#0" expanded="false" />
+                <element signature="e#2600#3372#0" expanded="false" />
+                <element signature="e#3421#3585#0" expanded="false" />
+                <element signature="e#3634#3802#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -164,11 +145,11 @@
         <option value="$PROJECT_DIR$/RL/MCTS/Model.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/AKQ_old.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/Game.py" />
-        <option value="$PROJECT_DIR$/RL/MCTS/Graph.py" />
-        <option value="$PROJECT_DIR$/RL/main_rl.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/Node.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/Tree.py" />
+        <option value="$PROJECT_DIR$/RL/MCTS/Graph.py" />
         <option value="$PROJECT_DIR$/RL/MCTS/AKQ.py" />
+        <option value="$PROJECT_DIR$/RL/main_rl.py" />
       </list>
     </option>
   </component>
@@ -282,7 +263,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/DataMiner" />
     <property name="FullScreen" value="true" />
   </component>
   <component name="RunManager" selected="Python.main_rl">
@@ -662,14 +643,21 @@
       <option name="project" value="LOCAL" />
       <updated>1515891970435</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="I think I have most of the bugs just have to fix the select_uct function">
+      <created>1515906951341</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1515906951341</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18463707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15503876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -678,7 +666,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27951807" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3939759" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -737,7 +725,8 @@
     <MESSAGE value="Working on getting AKQ game to run. Working on correctly instantiating an info node inside the simulate method." />
     <MESSAGE value="Next todo: Add cip logic to Game.py" />
     <MESSAGE value="Got a full AKQ run. The way I am updating my policies is messed up as the game is only returning a policy with a single node" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got a full AKQ run. The way I am updating my policies is messed up as the game is only returning a policy with a single node" />
+    <MESSAGE value="I think I have most of the bugs just have to fix the select_uct function" />
+    <option name="LAST_COMMIT_MESSAGE" value="I think I have most of the bugs just have to fix the select_uct function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -754,18 +743,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RL/main_rl.py</url>
-          <line>85</line>
-          <option name="timeStamp" value="141" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RL/MCTS/Graph.py</url>
-          <line>81</line>
-          <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RL/MCTS/AKQ.py</url>
-          <line>388</line>
-          <option name="timeStamp" value="212" />
+          <line>128</line>
+          <option name="timeStamp" value="217" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -775,7 +754,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="213" />
+      <option name="time" value="225" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1052,19 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RL/MCTS/Model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-          <folding>
-            <element signature="e#228#351#0" expanded="false" />
-            <element signature="e#409#619#0" expanded="false" />
-            <element signature="e#684#688#0" expanded="false" />
-            <element signature="e#754#758#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda/lib/python2.7/random.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -1085,62 +1051,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RL/MCTS/Model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+          <folding>
+            <element signature="e#228#351#0" expanded="false" />
+            <element signature="e#409#619#0" expanded="false" />
+            <element signature="e#684#688#0" expanded="false" />
+            <element signature="e#754#758#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RL/data/img/test.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RL/MCTS/Graph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="91" column="88" selection-start-line="91" selection-start-column="88" selection-end-line="91" selection-end-column="88" />
-          <folding>
-            <element signature="e#237#281#0" expanded="false" />
-            <element signature="e#2585#2749#0" expanded="false" />
-            <element signature="e#2798#2966#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RL/main_rl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
-          <folding>
-            <element signature="e#40#75#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RL/MCTS/Tree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="110" column="45" selection-start-line="110" selection-start-column="45" selection-end-line="110" selection-end-column="45" />
+        <state relative-caret-position="105">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
           <folding>
+            <element signature="e#107#2637#0" expanded="false" />
             <element signature="e#316#584#0" expanded="false" />
             <element signature="e#624#1034#0" expanded="false" />
             <element signature="e#1069#1089#0" expanded="false" />
             <element signature="e#1130#1154#0" expanded="false" />
             <element signature="e#1190#1207#0" expanded="false" />
+            <element signature="e#1252#1899#0" expanded="false" />
+            <element signature="e#1943#2637#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RL/MCTS/Graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="97" column="52" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
+          <folding>
+            <element signature="e#237#281#0" expanded="false" />
+            <element signature="e#329#1826#0" expanded="false" />
+            <element signature="e#1875#2536#0" expanded="false" />
+            <element signature="e#2600#3372#0" expanded="false" />
+            <element signature="e#3421#3585#0" expanded="false" />
+            <element signature="e#3634#3802#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RL/MCTS/Node.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="66" column="15" selection-start-line="66" selection-start-column="15" selection-end-line="66" selection-end-column="15" />
+        <state relative-caret-position="-488">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
             <element signature="e#97#1060#0" expanded="false" />
-            <element signature="e#1823#2768#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RL/MCTS/AKQ.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="378" column="11" selection-start-line="378" selection-start-column="11" selection-end-line="378" selection-end-column="11" />
+        <state relative-caret-position="236">
+          <caret line="463" column="48" selection-start-line="463" selection-start-column="48" selection-end-line="463" selection-end-column="48" />
           <folding>
             <element signature="e#43#833#1" expanded="false" />
             <element signature="e#835#848#0" expanded="true" />
@@ -1149,19 +1123,30 @@
             <element signature="e#1548#2189#0" expanded="false" />
             <element signature="e#2224#2342#0" expanded="false" />
             <element signature="e#2379#2487#0" expanded="false" />
+            <element signature="e#2519#2770#0" expanded="false" />
             <element signature="e#3003#3206#0" expanded="false" />
             <element signature="e#3242#3273#0" expanded="false" />
             <element signature="e#3331#3627#0" expanded="false" />
             <element signature="e#3676#3804#0" expanded="false" />
-            <element signature="e#3863#4732#0" expanded="false" />
-            <element signature="e#4776#5157#0" expanded="false" />
-            <element signature="e#5204#5424#0" expanded="false" />
-            <element signature="e#5460#5922#0" expanded="false" />
-            <element signature="e#5957#7536#0" expanded="false" />
-            <element signature="e#7572#7948#0" expanded="false" />
-            <element signature="e#7991#8430#0" expanded="false" />
-            <element signature="e#10928#11477#0" expanded="false" />
-            <element signature="e#11522#12096#0" expanded="false" />
+            <element signature="e#3863#4764#0" expanded="false" />
+            <element signature="e#4808#5189#0" expanded="false" />
+            <element signature="e#5236#5456#0" expanded="false" />
+            <element signature="e#5492#5954#0" expanded="false" />
+            <element signature="e#5989#7574#0" expanded="false" />
+            <element signature="e#7610#7986#0" expanded="false" />
+            <element signature="e#8029#8468#0" expanded="false" />
+            <element signature="e#11333#11882#0" expanded="false" />
+            <element signature="e#11927#12501#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RL/main_rl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
