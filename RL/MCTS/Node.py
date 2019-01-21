@@ -49,7 +49,6 @@ class Node(object):
 
         self.p2_cip = p2_cip
 
-
 class InfoNode(object):
 
     '''

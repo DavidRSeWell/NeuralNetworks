@@ -68,13 +68,13 @@ class Tree:
             from current tree that has the same attributes
         '''
 
-        node_main_info = [node.p1_cip, node.p2_cip, node.action, node.player_hand,node.parent]
+        node_main_info = [node.p1_cip, node.p2_cip, node.action, node.player_hand]
 
         for tree_node in self.nodes:
 
             try:
 
-                tree_node_info = [tree_node.p1_cip, tree_node.p2_cip, tree_node.action, tree_node.player_hand,tree_node.parent]
+                tree_node_info = [tree_node.p1_cip, tree_node.p2_cip, tree_node.action, tree_node.player_hand]
 
                 if tree_node_info == node_main_info:
 
@@ -95,13 +95,13 @@ class Tree:
         :return:
         '''
 
-        node_main_info = [node.p1_cip,node.p2_cip,node.action,node.player_hand,node.parent]
+        node_main_info = [node.p1_cip,node.p2_cip,node.action,node.player_hand]
 
         for tree_node in self.nodes:
 
             try:
 
-                tree_node_info = [tree_node.p1_cip,tree_node.p2_cip,tree_node.action,tree_node.player_hand,tree_node.parent]
+                tree_node_info = [tree_node.p1_cip,tree_node.p2_cip,tree_node.action,tree_node.player_hand]
 
                 if tree_node_info == node_main_info:
 

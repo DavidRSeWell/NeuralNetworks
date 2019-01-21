@@ -57,7 +57,7 @@ import random
 import numpy as np
 
 #from RL.MCTS.Model import MCTS
-from RL.MCTS.Node import AKQNode,InfoNode
+from RL.MCTS.Node import AKQNode,InfoNode,Node
 from RL.MCTS.Tree import Tree
 
 
@@ -160,6 +160,8 @@ class AKQGameState(object):
 
         self.player2 = None
 
+        self.iter_count = 0
+
         self.deck = [3,2,1]
 
         self.game_tree = game_tree # the full game tree for for the information trees to reference
@@ -219,7 +221,12 @@ class AKQGameState(object):
 
             return NewInfoNode
 
-        NewInfoNode = InfoNode(current_player.current_hand,player=s.player ,action=s.action, parent=s.parent,
+
+        # need to make a copy of the parent cannot pass as reference
+
+        new_parent = Node(s.parent.player,parent=s.parent.parent,p1_cip=s.parent.p1_cip,p2_cip=s.parent.p2_cip,action=s.parent.action)
+
+        NewInfoNode = InfoNode(current_player.current_hand,player=s.player ,action=s.action, parent=new_parent,
                                p1_cip=s.p1_cip, p2_cip=s.p2_cip,is_leaf=s.is_leaf)
 
         return NewInfoNode
@@ -262,7 +269,11 @@ class AKQGameState(object):
 
         p2_tree = Tree() # info tree
 
-        p2_tree.set_root(self.game_tree.get_root())
+        game_root = self.game_tree.get_root()
+
+        p2_root_node = Node(game_root.player,p1_cip=0,p2_cip=0)
+
+        p2_tree.set_root(p2_root_node)
 
         self.player1 = AKQPlayer(name="p1",info_tree=p1_tree,starting_stack=1)
 
@@ -394,7 +405,7 @@ class AKQGameState(object):
 
             child_visit_count = info_policy[action]['count']
 
-            score = child_ev_value + 50*np.sqrt(np.log(N_U)/child_visit_count)
+            score = child_ev_value + 1.5*np.sqrt(np.log(N_U)/child_visit_count)
 
             if score > current_max:
 
@@ -409,6 +420,8 @@ class AKQGameState(object):
             return {current_max_action:1}
 
     def simulate(self,s):
+
+        self.iter_count += 1
         '''
             Takes in a state
 
@@ -496,7 +509,6 @@ class AKQGameState(object):
 
         player_reward = r[current_player.name]
 
-
         current_player.policy[u_i.node_index][a.keys()[0]]['count'] += 1
 
         current_count = current_player.policy[u_i.node_index][a.keys()[0]]['count']
@@ -510,6 +522,8 @@ class AKQGameState(object):
     def run(self,num_iterations):
 
         for i in range(num_iterations):
+
+            #self.iter_count = i
 
             self.deck = [3,2,1] # reshuffle the cards yo
 

@@ -24,6 +24,19 @@ def softmax(X):
 
     return np.exp(X) / np.sum(np.exp(X))
 
+def sigmoid(X):
+    return 1/ (1 + np.exp(-X))
+
+def negative_log_loss(y_predict, y_expected):
+    '''
+    take in the predicted y^ which are probabilities of p(y|x1,x2....xn)
+    :param y_predict:
+    :return: array
+    '''
+
+    expected_index = np.where(y_expected == 1)[0][0]
+    return -np.log(y_predict[expected_index])
+
 def plot_matrix(X,x_labels,y_labels,savepath):
 
 
@@ -135,5 +148,44 @@ def build_dataset(words):
 
 
     return dictionary, reverse_dictionary, one_hot_vocab
+
+def gradient_check(loss):
+
+    '''
+    function for checking whether the gradient of a
+    function is working properly or not using newton method
+
+    f'(x) = (f(x + h) - f(x - h)) / 2h
+    :return:
+    '''
+
+def plot_weights(weights,save_path,columns,rows):
+
+    import matplotlib.pyplot as plt
+
+    #weights_y_size = weights.shape[0]
+    #weights_x_size = weights.shape[1]
+
+    #fig = plt.figure(figsize=(rows * weights_y_size, columns * weights_x_size))
+    fig = plt.figure(figsize=(8 * 5, 4 * 5))
+
+    columns = 4
+
+    rows = 8
+
+    for i in range(1, columns * rows + 1):
+        # img = np.random.randint(10, size=(h, w))
+
+        img = weights[0][:, :, 0, i - 1]
+
+        fig.add_subplot(rows, columns, i)
+
+        plt.imshow(img, cmap='gray', interpolation='nearest', aspect='auto')
+
+    fig.tight_layout()
+
+    fig.savefig(save_path, dpi=800)
+
+
 
 
