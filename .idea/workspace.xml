@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d99d5ac5-858d-48fa-b062-82d540bbf8ca" name="Default" comment="it works! Just got a normal form output that looked correct ish">
-      <change afterPath="$PROJECT_DIR$/CNN/cnn_dash.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CNN/keras_mnist_example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CNN/test_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dash/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dash/dice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dash/rbm_mnist_simple.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NLP/cbow_single.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NN/rbm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NN/rbm_mnist_sklearn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notebooks/w2v.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RL/DQN/dqn_keras_example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RL/XFP/AKQ.py" afterDir="false" />
+    <list default="true" id="d99d5ac5-858d-48fa-b062-82d540bbf8ca" name="Default" comment="got cbow simple working!">
       <change beforePath="$PROJECT_DIR$/.idea/NeuralNetworks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NeuralNetworks.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RL/MCTS/AKQ.py" beforeDir="false" afterPath="$PROJECT_DIR$/RL/MCTS/AKQ.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RL/MCTS/Node.py" beforeDir="false" afterPath="$PROJECT_DIR$/RL/MCTS/Node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RL/MCTS/Tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/RL/MCTS/Tree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RL/main_rl.py" beforeDir="false" afterPath="$PROJECT_DIR$/RL/main_rl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNN/notebooks/view_rnn_trans_prob_matrix.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/RNN/notebooks/view_rnn_trans_prob_matrix.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/activation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/activation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NLP/cbow_single.py" beforeDir="false" afterPath="$PROJECT_DIR$/NLP/cbow_single.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notebooks/w2v.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Notebooks/w2v.ipynb" afterDir="false" />
     </list>
     <ignored path="NeuralNetworks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/NeuralNetworks$cbow_single.coverage" NAME="cbow_single Coverage Results" MODIFIED="1548095684374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
+    <SUITE FILE_PATH="coverage/NeuralNetworks$cbow_single.coverage" NAME="cbow_single Coverage Results" MODIFIED="1549027571883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/NLP" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -43,10 +25,11 @@
     <session id="124013764">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -67,12 +50,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="599" />
+          <entry key="py" value="1704" />
+          <entry key="txt" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="599" />
+          <entry key="PLAIN_TEXT" value="26" />
+          <entry key="Python" value="1704" />
         </counts>
       </usages-collector>
     </session>
@@ -85,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
+            <state relative-caret-position="465">
               <caret line="167" selection-start-line="167" selection-end-line="167" />
               <folding>
                 <element signature="e#136#154#0" expanded="true" />
@@ -105,11 +90,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NLP/cbow_single.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+            <state relative-caret-position="195">
+              <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
               <folding>
-                <marker date="1548095684367" expanded="true" signature="379:381" ph="..." />
-                <marker date="1548095684367" expanded="true" signature="427:433" ph="..." />
+                <marker date="1549027571876" expanded="true" signature="36:80" ph="..." />
+                <marker date="1549027571876" expanded="true" signature="677:678" ph="..." />
+                <marker date="1549027571876" expanded="true" signature="677:2413" ph="..." />
+                <marker date="1549027571876" expanded="true" signature="1484:2413" ph="..." />
               </folding>
             </state>
           </provider>
@@ -230,7 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,6 +239,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -291,6 +278,28 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="NeuralNetworks" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="cbow_single" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="NeuralNetworks" />
@@ -570,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515988905544</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="got cbow simple working!">
+      <created>1548097158815</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1548097158815</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView">
@@ -584,24 +600,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12832801" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12992546" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32900944" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3237624" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3237624" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3960396" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005325" side_tool="true" weight="0.22178218" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49946752" visible="true" weight="0.26930693" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32871288" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946752" weight="0.26930693" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="LuaCheck" order="13" />
+      <window_info anchor="right" x="0" y="0" width="430" height="880" id="Documentation" side_tool="true" visible="true" weight="0.32960597" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -666,7 +684,8 @@
     <MESSAGE value="Got a full AKQ run. The way I am updating my policies is messed up as the game is only returning a policy with a single node" />
     <MESSAGE value="I think I have most of the bugs just have to fix the select_uct function" />
     <MESSAGE value="it works! Just got a normal form output that looked correct ish" />
-    <option name="LAST_COMMIT_MESSAGE" value="it works! Just got a normal form output that looked correct ish" />
+    <MESSAGE value="got cbow simple working!" />
+    <option name="LAST_COMMIT_MESSAGE" value="got cbow simple working!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -727,47 +746,47 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>y_hat</expression-string>
+        <expression-string>beta_update</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>W_1[:,0:2]</expression-string>
+        <expression-string>y_observed[j] - p_hat_i[j]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>alpha</expression-string>
+        <expression-string>x_update.shape</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>gradient_vector_w_2[:,0:2]</expression-string>
+        <expression-string>x_update</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>W_1[:,0:1]</expression-string>
+        <expression-string>X.shape</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>W_1[:,0,1]</expression-string>
+        <expression-string>Beta.shape</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>W_1[:,0]</expression-string>
+        <expression-string>sorted(text_list)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>W_1</expression-string>
+        <expression-string>text_list.sort()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>gradient_vector_w_2.shape</expression-string>
+        <expression-string>text_list</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -1071,24 +1090,7 @@
     <entry file="file://$PROJECT_DIR$/Notebooks/temp-plot.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CNN/test_image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-          <folding>
-            <element signature="e#2#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RNN/notebooks/RNN presentation.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RNN/notebooks/view_rnn_trans_prob_matrix.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
@@ -1097,7 +1099,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
+        <state relative-caret-position="465">
           <caret line="167" selection-start-line="167" selection-end-line="167" />
           <folding>
             <element signature="e#136#154#0" expanded="true" />
@@ -1113,13 +1115,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RNN/notebooks/view_rnn_trans_prob_matrix.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CNN/test_image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+          <folding>
+            <element signature="e#2#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NLP/cbow_single.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+        <state relative-caret-position="195">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           <folding>
-            <marker date="1548095684367" expanded="true" signature="379:381" ph="..." />
-            <marker date="1548095684367" expanded="true" signature="427:433" ph="..." />
+            <marker date="1549027571876" expanded="true" signature="36:80" ph="..." />
+            <marker date="1549027571876" expanded="true" signature="677:678" ph="..." />
+            <marker date="1549027571876" expanded="true" signature="677:2413" ph="..." />
+            <marker date="1549027571876" expanded="true" signature="1484:2413" ph="..." />
           </folding>
         </state>
       </provider>

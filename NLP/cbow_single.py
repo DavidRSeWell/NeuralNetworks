@@ -1,6 +1,9 @@
-
 import numpy as np
 
+
+def softmax(z):
+
+    return np.exp(z) / np.sum(np.exp(z))
 
 def get_posterior(input_word, w_1):
     a = np.matmul(w_1.T, input_word.T)
@@ -8,7 +11,20 @@ def get_posterior(input_word, w_1):
     a = a / sum(a)
     return a
 
+def get_posterior2(input_word, w_1):
+    a = np.matmul(w_1, input_word.T)
+    a = np.exp(a)
+    a = a / sum(a)
+    return a
+
+
 def get_transition_matrix(W0,W1):
+    '''
+
+    :param W0:
+    :param W1:
+    :return:
+    '''
 
     trans_matrix = np.zeros((W0.shape[0],W0.shape[0]))
 
@@ -18,9 +34,67 @@ def get_transition_matrix(W0,W1):
 
     return trans_matrix
 
+def logistic_regression_cbow(iters,text,vector_size):
+    '''
+    Following derivations from A-matrix paper
+    start with binary logistic regression w/ backpropagation
+    Steps:
+        0: init x , beta , alpha
+            X = T x K - (T = size of vocab and K = vector size)
+            Beta = 1 x K
+        1: for each word in corpus
+            predict = logit(x_t,beta)
+            p_hat = sample proportion #y / #T - Says in paper #y / #T but it should be #y / #C where #C is corpus size
+            p_hat
+            x = x + alpha*(p_hat - predict)*
 
-def run_simple_cbow(iters, text, vector_size):
 
+    :return:
+    '''
+
+    text = text.replace(',', '').lower()
+    text_list = text.split()
+    vocab = sorted(list(set(text_list)))
+    vocab_size = len(vocab)
+    alpha = 0.05  # learning rate
+    X = np.random.random((vocab_size, vector_size))
+    Beta = np.random.random((vector_size, vocab_size))
+
+    for _ in range(iters):  # one iteration is a full walk through the tex
+
+        for i in range(len(text_list[:-1])):  # go up to the last word. No wrapping
+
+            w_input = text_list[i]
+            w_output = text_list[i + 1]
+            input_vocab_index = vocab.index(w_input)
+            output_vocab_index = vocab.index(w_output)
+            y_observed = np.zeros(len(vocab))
+
+            y_observed[output_vocab_index] = 1
+
+            x_i = X[input_vocab_index]
+            z = np.matmul(Beta,x_i.T)
+            p_hat_i = softmax(z)
+
+            #E = y_observed - p_hat
+
+            #x_i += x_i + alpha*np.matmul(E,x_i)
+            for j in range(vocab_size):
+
+                beta_update = alpha*(y_observed[j] - p_hat_i[j])*x_i
+
+                x_update = alpha*(y_observed[j] - p_hat_i[j])*Beta[j]
+
+                Beta[j] += beta_update
+                X[input_vocab_index] += x_update
+
+    return X,Beta
+
+
+
+
+
+def simple_cbow(iters, text, vector_size):
     '''
         run through vocab the number of iters
         for each word in text:
@@ -31,7 +105,7 @@ def run_simple_cbow(iters, text, vector_size):
 
     text = text.replace(',', '').lower()
     text_list = text.split()
-    vocab = list(set(text.split()))
+    vocab = sorted(list(set(text_list)))
     vocab_size = len(vocab)
     alpha = 0.05  # learning rate
     W_0 = np.random.random((vocab_size, vector_size))
@@ -97,8 +171,22 @@ if __name__ == '__main__':
 
     text = 'I swear to you gentlemen, that to be overly conscious is a sickness, a real, thorough sickness'
 
-    W0,W1 = run_simple_cbow(500, text, 14)
+    run_simple_cbow = 1
+    if run_simple_cbow:
 
-    trans_matrix = get_transition_matrix(W0,W1)
+        W0,W1 = simple_cbow(500, text, 14)
 
-    np.save("data/cbow_simple_trans",trans_matrix)
+        trans_matrix = get_transition_matrix(W0,W1)
+
+        np.save("data/cbow_simple_trans",trans_matrix)
+        np.save("data/W0",W0)
+        np.save("data/W1",W1)
+
+    run_logistinc_reg_simple = 0
+    if run_logistinc_reg_simple:
+
+        X,Beta = logistic_regression_cbow(500, text, 14)
+
+        trans_matrix = get_transition_matrix(X, Beta)
+
+        np.save("data/logistic_trans", trans_matrix)
