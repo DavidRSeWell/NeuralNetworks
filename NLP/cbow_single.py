@@ -169,24 +169,37 @@ def simple_cbow(iters, text, vector_size):
 
 if __name__ == '__main__':
 
-    text = 'I swear to you gentlemen, that to be overly conscious is a sickness, a real, thorough sickness'
+    #text = 'I swear to you gentlemen, that to be overly conscious is a sickness, a real, thorough sickness'
+
+    text = '''
+        The cat really jumped
+        The cat really ate
+        The cat almost jumped
+        The cat almost ate
+        The dog really jumped
+        The dog really ate
+        The dog almost jumped
+        The dog almost ate
+    '''
 
     run_simple_cbow = 1
     if run_simple_cbow:
 
-        W0,W1 = simple_cbow(500, text, 14)
+        W0,W1 = simple_cbow(500, text, 7)
 
         trans_matrix = get_transition_matrix(W0,W1)
 
         np.save("data/cbow_simple_trans",trans_matrix)
-        np.save("data/W0",W0)
-        np.save("data/W1",W1)
+        np.save("data/cbow_W0",W0)
+        np.save("data/cbow_W1",W1)
 
     run_logistinc_reg_simple = 0
     if run_logistinc_reg_simple:
 
-        X,Beta = logistic_regression_cbow(500, text, 14)
+        X,Beta = logistic_regression_cbow(500, text, 7)
 
-        trans_matrix = get_transition_matrix(X, Beta)
+        trans_matrix = get_transition_matrix(X, Beta.T)
 
         np.save("data/logistic_trans", trans_matrix)
+        np.save("data/logit_X", X)
+        np.save("data/logit_Beta", Beta)
