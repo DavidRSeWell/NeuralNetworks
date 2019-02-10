@@ -34,7 +34,7 @@ def get_transition_matrix(W0,W1):
 
     return trans_matrix
 
-def logistic_regression_cbow(iters,text,vector_size):
+def logistic_regression_cbow(iters,text,vector_size,use_conditional=False):
     '''
     Following derivations from A-matrix paper
     start with binary logistic regression w/ backpropagation
@@ -60,6 +60,8 @@ def logistic_regression_cbow(iters,text,vector_size):
     X = np.random.random((vocab_size, vector_size))
     Beta = np.random.random((vector_size, vocab_size))
 
+    conditional_prob_mat = np.load("/Users/befeltingu/NeuralNetworks/NLP/data/conditional_prob_mat.npy")
+
     for _ in range(iters):  # one iteration is a full walk through the tex
 
         for i in range(len(text_list[:-1])):  # go up to the last word. No wrapping
@@ -68,12 +70,21 @@ def logistic_regression_cbow(iters,text,vector_size):
             w_output = text_list[i + 1]
             input_vocab_index = vocab.index(w_input)
             output_vocab_index = vocab.index(w_output)
+
             y_observed = np.zeros(len(vocab))
 
             y_observed[output_vocab_index] = 1
 
+            if use_conditional: # use the conditional prob as the observed value
+
+                y_observed = conditional_prob_mat[input_vocab_index]
+
             x_i = X[input_vocab_index]
-            z = np.matmul(Beta,x_i.T)
+
+            #x_i = np.reshape(x_i,(1,x_i.shape[0]))
+
+            z = np.matmul(x_i,Beta)
+
             p_hat_i = softmax(z)
 
             #E = y_observed - p_hat
@@ -81,11 +92,11 @@ def logistic_regression_cbow(iters,text,vector_size):
             #x_i += x_i + alpha*np.matmul(E,x_i)
             for j in range(vocab_size):
 
-                beta_update = alpha*(y_observed[j] - p_hat_i[j])*x_i
+                beta_update = alpha*(y_observed[j] - p_hat_i[j])*x_i.T
 
-                x_update = alpha*(y_observed[j] - p_hat_i[j])*Beta[j]
+                x_update = alpha*(y_observed[j] - p_hat_i[j])*Beta[:,j].T
 
-                Beta[j] += beta_update
+                Beta[:,j] += beta_update
                 X[input_vocab_index] += x_update
 
     return X,Beta
@@ -93,6 +104,40 @@ def logistic_regression_cbow(iters,text,vector_size):
 
 
 
+def create_conditional_prob(text):
+
+    text = text.replace(',', '').lower()
+    text_list = text.split()
+    vocab = sorted(list(set(text_list)))
+    vocab_size = len(vocab)
+
+    count_mat = np.zeros((vocab_size,vocab_size))
+
+    for i in range(len(text_list) - 1):
+
+        word = text_list[i]
+
+        next_word = text_list[i + 1]
+
+        index_next = vocab.index(next_word)
+
+        word_index = vocab.index(word)
+
+        count_mat[word_index][index_next] += int(1)
+
+    next_word = text_list[0]
+    word = text_list[-1]
+    index_next = vocab.index(next_word)
+    word_index = vocab.index(word)
+    count_mat[word_index][index_next] += int(1)
+
+    row_sumA = np.matrix([count_mat[i].sum() for i in range(len(count_mat))])
+
+    ones_rowA = np.matrix([1 for i in range(len(count_mat))])  # ones vector for mult
+
+    probA = count_mat / (row_sumA.T * ones_rowA)  # Markov trans probl matrix
+
+    np.save('data/conditional_prob_mat',probA)
 
 def simple_cbow(iters, text, vector_size):
     '''
@@ -182,7 +227,7 @@ if __name__ == '__main__':
         The dog almost ate
     '''
 
-    run_simple_cbow = 1
+    run_simple_cbow = 0
     if run_simple_cbow:
 
         W0,W1 = simple_cbow(500, text, 7)
@@ -193,13 +238,18 @@ if __name__ == '__main__':
         np.save("data/cbow_W0",W0)
         np.save("data/cbow_W1",W1)
 
-    run_logistinc_reg_simple = 0
+    run_logistinc_reg_simple = 1
     if run_logistinc_reg_simple:
 
-        X,Beta = logistic_regression_cbow(500, text, 7)
+        X,Beta = logistic_regression_cbow(1500, text, 7,False)
 
-        trans_matrix = get_transition_matrix(X, Beta.T)
+        trans_matrix = get_transition_matrix(X, Beta)
 
         np.save("data/logistic_trans", trans_matrix)
         np.save("data/logit_X", X)
         np.save("data/logit_Beta", Beta)
+
+    run_create_conditional_prob = 0
+    if run_create_conditional_prob:
+
+        create_conditional_prob(text)
